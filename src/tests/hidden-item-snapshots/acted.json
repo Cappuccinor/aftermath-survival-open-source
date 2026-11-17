@@ -1,0 +1,1982 @@
+{
+  "stateSchema": "g0-world-v1",
+  "campaign": {
+    "saveId": "prototype-world",
+    "schemaVersion": null,
+    "difficulty": "test_fixture",
+    "seed": 1,
+    "createdAt": "2026-10-23T00:00:00.000Z",
+    "gameClockMinutes": 24,
+    "worldRevision": 24,
+    "offlineProgressionEnabled": false
+  },
+  "player": {
+    "playerId": "prototype-player",
+    "background": "",
+    "locationId": "prototype-location",
+    "stats": {
+      "hp": 100,
+      "stamina": 100,
+      "mental": 100,
+      "hunger": 0,
+      "thirst": 0,
+      "fatigue": 0,
+      "infection": 0,
+      "pain": 0,
+      "bodyTempC": 37,
+      "carryWeightKg": 0.55
+    },
+    "skills": {},
+    "knownFactIds": [
+      "known-prototype-route",
+      "known-door-prototype-door-gap",
+      "known-building-scene",
+      "cabinet-known",
+      "door-observation-mixed-0",
+      "door-heard-mixed-0",
+      "search-prototype-location-result",
+      "seen-item-prototype-tin",
+      "inspection-prototype-tin-appearance",
+      "cabinet-discovery-prototype-bottled-water",
+      "transfer-prototype-bottled-water",
+      "door-observation-mixed-5",
+      "door-heard-mixed-5",
+      "transfer-prototype-tin",
+      "movement-prototype-player-location",
+      "sight-prototype-corridor-light",
+      "door-observation-mixed-11",
+      "door-heard-mixed-11",
+      "door-observation-mixed-14",
+      "door-heard-mixed-14",
+      "door-observation-mixed-18",
+      "door-heard-mixed-18",
+      "cabinet-search-prototype-cabinet",
+      "sight-prototype-location-light",
+      "door-observation-mixed-22",
+      "door-heard-mixed-22"
+    ]
+  },
+  "locations": {
+    "prototype-location": {
+      "locationId": "prototype-location",
+      "name": "G0 测试地点",
+      "adjacentLocationIds": [
+        "prototype-corridor"
+      ],
+      "light": 1,
+      "searched": true
+    },
+    "prototype-corridor": {
+      "locationId": "prototype-corridor",
+      "name": "走廊",
+      "adjacentLocationIds": [
+        "prototype-location"
+      ],
+      "light": 0.2,
+      "searched": false
+    }
+  },
+  "items": {
+    "prototype-tin": {
+      "itemId": "prototype-tin",
+      "typeId": "empty-tin",
+      "position": {
+        "kind": "player",
+        "id": "prototype-player"
+      },
+      "count": 1,
+      "weightKg": 0.05,
+      "durability": 100,
+      "condition": "",
+      "metadata": {}
+    },
+    "prototype-cabinet": {
+      "itemId": "prototype-cabinet",
+      "typeId": "wooden-cabinet",
+      "position": {
+        "kind": "location",
+        "id": "prototype-location"
+      },
+      "count": 1,
+      "weightKg": 20,
+      "durability": 100,
+      "condition": "intact",
+      "metadata": {}
+    },
+    "prototype-bottled-water": {
+      "itemId": "prototype-bottled-water",
+      "typeId": "bottled-water",
+      "position": {
+        "kind": "player",
+        "id": "prototype-player"
+      },
+      "count": 1,
+      "weightKg": 0.5,
+      "durability": 100,
+      "condition": "sealed",
+      "metadata": {}
+    },
+    "prototype-hidden-handgun": {
+      "itemId": "prototype-hidden-handgun",
+      "typeId": "hidden-handgun-fixture-v1",
+      "position": {
+        "kind": "npc",
+        "id": "prototype-witness"
+      },
+      "count": 1,
+      "weightKg": 1,
+      "durability": 100,
+      "condition": "concealed",
+      "metadata": {}
+    }
+  },
+  "knowledge": [
+    {
+      "knowerId": "prototype-player",
+      "factId": "known-prototype-route",
+      "source": "evt-initial-route",
+      "confidence": 1,
+      "observedAt": 0
+    },
+    {
+      "knowerId": "prototype-player",
+      "factId": "known-door-prototype-door-gap",
+      "source": "evt-initial-door-gap",
+      "confidence": 1,
+      "observedAt": 0
+    },
+    {
+      "knowerId": "prototype-player",
+      "factId": "known-building-scene",
+      "source": "evt-initial-building-scene",
+      "confidence": 1,
+      "observedAt": 0
+    },
+    {
+      "knowerId": "prototype-player",
+      "factId": "cabinet-known",
+      "source": "evt-initial-cabinet",
+      "confidence": 1,
+      "observedAt": 0
+    },
+    {
+      "knowerId": "prototype-player",
+      "factId": "door-observation-mixed-0",
+      "source": "evt-mixed-0-door",
+      "confidence": 1,
+      "observedAt": 1
+    },
+    {
+      "knowerId": "prototype-player",
+      "factId": "door-heard-mixed-0",
+      "source": "evt-mixed-0-door-sound",
+      "confidence": 1,
+      "observedAt": 1
+    },
+    {
+      "knowerId": "prototype-player",
+      "factId": "seen-item-prototype-tin",
+      "source": "evt-mixed-1-discovery",
+      "confidence": 1,
+      "observedAt": 2
+    },
+    {
+      "knowerId": "prototype-player",
+      "factId": "inspection-prototype-tin-appearance",
+      "source": "evt-mixed-2-inspection",
+      "confidence": 1,
+      "observedAt": 3
+    },
+    {
+      "knowerId": "prototype-player",
+      "factId": "cabinet-discovery-prototype-bottled-water",
+      "source": "evt-mixed-3-cabinet-discovery",
+      "confidence": 1,
+      "observedAt": 4
+    },
+    {
+      "knowerId": "prototype-player",
+      "factId": "transfer-prototype-bottled-water",
+      "source": "evt-mixed-4-transfer",
+      "confidence": 1,
+      "observedAt": 5
+    },
+    {
+      "knowerId": "prototype-player",
+      "factId": "door-observation-mixed-5",
+      "source": "evt-mixed-5-door",
+      "confidence": 1,
+      "observedAt": 6
+    },
+    {
+      "knowerId": "prototype-player",
+      "factId": "door-heard-mixed-5",
+      "source": "evt-mixed-5-door-sound",
+      "confidence": 1,
+      "observedAt": 6
+    },
+    {
+      "knowerId": "prototype-player",
+      "factId": "transfer-prototype-tin",
+      "source": "evt-mixed-6-transfer",
+      "confidence": 1,
+      "observedAt": 7
+    },
+    {
+      "knowerId": "prototype-player",
+      "factId": "door-observation-mixed-11",
+      "source": "evt-mixed-11-door",
+      "confidence": 1,
+      "observedAt": 12
+    },
+    {
+      "knowerId": "prototype-player",
+      "factId": "door-heard-mixed-11",
+      "source": "evt-mixed-11-door-sound",
+      "confidence": 1,
+      "observedAt": 12
+    },
+    {
+      "knowerId": "prototype-player",
+      "factId": "door-observation-mixed-14",
+      "source": "evt-mixed-14-door",
+      "confidence": 1,
+      "observedAt": 15
+    },
+    {
+      "knowerId": "prototype-player",
+      "factId": "door-heard-mixed-14",
+      "source": "evt-mixed-14-door-sound",
+      "confidence": 1,
+      "observedAt": 15
+    },
+    {
+      "knowerId": "prototype-player",
+      "factId": "sight-prototype-corridor-light",
+      "source": "evt-mixed-16-observation",
+      "confidence": 1,
+      "observedAt": 17
+    },
+    {
+      "knowerId": "prototype-player",
+      "factId": "movement-prototype-player-location",
+      "source": "evt-mixed-17-movement",
+      "confidence": 1,
+      "observedAt": 18
+    },
+    {
+      "knowerId": "prototype-player",
+      "factId": "door-observation-mixed-18",
+      "source": "evt-mixed-18-door",
+      "confidence": 1,
+      "observedAt": 19
+    },
+    {
+      "knowerId": "prototype-player",
+      "factId": "door-heard-mixed-18",
+      "source": "evt-mixed-18-door-sound",
+      "confidence": 1,
+      "observedAt": 19
+    },
+    {
+      "knowerId": "prototype-player",
+      "factId": "cabinet-search-prototype-cabinet",
+      "source": "evt-mixed-19-cabinet-search",
+      "confidence": 1,
+      "observedAt": 20
+    },
+    {
+      "knowerId": "prototype-player",
+      "factId": "search-prototype-location-result",
+      "source": "evt-mixed-20-search",
+      "confidence": 1,
+      "observedAt": 21
+    },
+    {
+      "knowerId": "prototype-player",
+      "factId": "door-observation-mixed-22",
+      "source": "evt-mixed-22-door",
+      "confidence": 1,
+      "observedAt": 23
+    },
+    {
+      "knowerId": "prototype-player",
+      "factId": "door-heard-mixed-22",
+      "source": "evt-mixed-22-door-sound",
+      "confidence": 1,
+      "observedAt": 23
+    },
+    {
+      "knowerId": "prototype-player",
+      "factId": "sight-prototype-location-light",
+      "source": "evt-mixed-23-observation",
+      "confidence": 1,
+      "observedAt": 24
+    }
+  ],
+  "npcs": [
+    {
+      "kind": "g1-door-witness-v1",
+      "npcId": "prototype-witness",
+      "locationId": "prototype-corridor",
+      "appearance": "worn-shoes-v1",
+      "alertness": 90,
+      "firstNoticed": {
+        "playerId": "prototype-player",
+        "locationId": "prototype-location",
+        "observedAt": 1,
+        "sourceEventId": "evt-mixed-0-door-notice"
+      }
+    }
+  ],
+  "relationships": [],
+  "factions": [],
+  "bases": [],
+  "vehicles": [],
+  "jobs": [],
+  "eventJournal": [
+    {
+      "eventId": "evt-initial-route",
+      "seq": 1,
+      "worldTimeMinutes": 0,
+      "type": "KnownRouteInitialized",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-location",
+        "prototype-corridor"
+      ],
+      "payload": {
+        "rule": "known-route-v1",
+        "roomId": "prototype-location",
+        "corridorId": "prototype-corridor"
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-initial-search",
+      "seq": 2,
+      "worldTimeMinutes": 0,
+      "type": "SearchScopeInitialized",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-location"
+      ],
+      "payload": {
+        "rule": "search-scope-v1",
+        "locationId": "prototype-location",
+        "itemId": "prototype-tin"
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-initial-door-gap",
+      "seq": 3,
+      "worldTimeMinutes": 0,
+      "type": "DoorGapInitialized",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-door-gap",
+        "prototype-location",
+        "prototype-corridor",
+        "prototype-witness"
+      ],
+      "payload": {
+        "rule": "door-gap-scope-v1",
+        "doorId": "prototype-door-gap",
+        "roomId": "prototype-location",
+        "corridorId": "prototype-corridor",
+        "npcId": "prototype-witness",
+        "gapOpen": true,
+        "initialAlertness": 30,
+        "initialRng": {
+          "algorithm": "xorshift32-v1",
+          "state": 1
+        },
+        "perception": 0,
+        "stealth": 0,
+        "corridorLight": 0.2
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-initial-pickup",
+      "seq": 4,
+      "worldTimeMinutes": 0,
+      "type": "PickupScopeInitialized",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-tin"
+      ],
+      "payload": {
+        "rule": "pickup-scope-v1",
+        "playerId": "prototype-player",
+        "locationId": "prototype-location",
+        "searchSourceEventId": "evt-initial-search",
+        "initialCarryWeightKg": 0,
+        "initialItem": {
+          "itemId": "prototype-tin",
+          "typeId": "empty-tin",
+          "position": {
+            "kind": "location",
+            "id": "prototype-location"
+          },
+          "count": 1,
+          "weightKg": 0.05,
+          "durability": 100,
+          "condition": "",
+          "metadata": {}
+        }
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-initial-building-scene",
+      "seq": 5,
+      "worldTimeMinutes": 0,
+      "type": "BuildingSceneInitialized",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-location",
+        "prototype-corridor"
+      ],
+      "payload": {
+        "rule": "building-scene-v1",
+        "scene": "abandoned-residential-building-v1",
+        "playerId": "prototype-player",
+        "roomId": "prototype-location",
+        "corridorId": "prototype-corridor",
+        "routeSourceEventId": "evt-initial-route",
+        "pickupSourceEventId": "evt-initial-pickup"
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-initial-cabinet",
+      "seq": 6,
+      "worldTimeMinutes": 0,
+      "type": "CabinetSceneInitialized",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-cabinet"
+      ],
+      "payload": {
+        "rule": "cabinet-scope-v1",
+        "playerId": "prototype-player",
+        "locationId": "prototype-location",
+        "cabinetId": "prototype-cabinet",
+        "waterId": "prototype-bottled-water",
+        "buildingSourceEventId": "evt-initial-building-scene"
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-initial-transfer",
+      "seq": 7,
+      "worldTimeMinutes": 0,
+      "type": "TransferScopeInitialized",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-bottled-water"
+      ],
+      "payload": {
+        "rule": "dual-transfer-scope-v1",
+        "playerId": "prototype-player",
+        "locationId": "prototype-location",
+        "initialCarryWeightKg": 0,
+        "pickupSourceEventId": "evt-initial-pickup",
+        "cabinetSourceEventId": "evt-initial-cabinet",
+        "initialTin": {
+          "itemId": "prototype-tin",
+          "typeId": "empty-tin",
+          "position": {
+            "kind": "location",
+            "id": "prototype-location"
+          },
+          "count": 1,
+          "weightKg": 0.05,
+          "durability": 100,
+          "condition": "",
+          "metadata": {}
+        },
+        "initialWater": {
+          "itemId": "prototype-bottled-water",
+          "typeId": "bottled-water",
+          "position": {
+            "kind": "container",
+            "id": "prototype-cabinet"
+          },
+          "count": 1,
+          "weightKg": 0.5,
+          "durability": 100,
+          "condition": "sealed",
+          "metadata": {}
+        }
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-initial-npc-hidden-item",
+      "seq": 8,
+      "worldTimeMinutes": 0,
+      "type": "NpcHiddenItemInitialized",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-witness",
+        "prototype-hidden-handgun"
+      ],
+      "payload": {
+        "rule": "npc-hidden-item-scope-v1",
+        "playerId": "prototype-player",
+        "npcId": "prototype-witness",
+        "doorSourceEventId": "evt-initial-door-gap",
+        "transferSourceEventId": "evt-initial-transfer",
+        "initialItem": {
+          "itemId": "prototype-hidden-handgun",
+          "typeId": "hidden-handgun-fixture-v1",
+          "position": {
+            "kind": "npc",
+            "id": "prototype-witness"
+          },
+          "count": 1,
+          "weightKg": 1,
+          "durability": 100,
+          "condition": "concealed",
+          "metadata": {}
+        }
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-0-time",
+      "seq": 9,
+      "worldTimeMinutes": 1,
+      "type": "TimeAdvanced",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-door-gap"
+      ],
+      "payload": {
+        "rule": "door-observe-v1",
+        "commandId": "mixed-0",
+        "fromMinutes": 0,
+        "toMinutes": 1,
+        "fromRevision": 0,
+        "toRevision": 1
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-0-door",
+      "seq": 10,
+      "worldTimeMinutes": 1,
+      "type": "DoorObservationRecorded",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-door-gap"
+      ],
+      "payload": {
+        "rule": "door-observe-v1",
+        "commandId": "mixed-0",
+        "request": {
+          "actorId": "prototype-player",
+          "locationId": "prototype-location",
+          "doorId": "prototype-door-gap",
+          "expectedWorldRevision": 0
+        },
+        "elapsedMinutes": 1,
+        "committedRevision": 1,
+        "observedAt": 1,
+        "visual": "shoes",
+        "noticed": true,
+        "visualRoll": 0.00006295018829405308,
+        "noticeRoll": 0.015747428173199296,
+        "beforeAlertness": 30,
+        "afterAlertness": 40,
+        "rngBefore": {
+          "algorithm": "xorshift32-v1",
+          "state": 1
+        },
+        "rngAfter": {
+          "algorithm": "xorshift32-v1",
+          "state": 67634689
+        }
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-0-door-notice",
+      "seq": 11,
+      "worldTimeMinutes": 1,
+      "type": "NPCAlertnessChanged",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-witness"
+      ],
+      "payload": {
+        "rule": "door-notice-v1",
+        "commandId": "mixed-0",
+        "npcId": "prototype-witness",
+        "playerId": "prototype-player",
+        "locationId": "prototype-location",
+        "observedAt": 1,
+        "fromAlertness": 30,
+        "toAlertness": 40
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-0-door-sound",
+      "seq": 12,
+      "worldTimeMinutes": 1,
+      "type": "DoorReactionHeard",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-door-gap"
+      ],
+      "payload": {
+        "rule": "door-reaction-v1",
+        "commandId": "mixed-0",
+        "doorId": "prototype-door-gap",
+        "npcId": "prototype-witness",
+        "observedAt": 1,
+        "cue": "cloth-rustle-v1"
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-1-time",
+      "seq": 13,
+      "worldTimeMinutes": 2,
+      "type": "TimeAdvanced",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-location"
+      ],
+      "payload": {
+        "rule": "search-v1",
+        "commandId": "mixed-1",
+        "fromMinutes": 1,
+        "toMinutes": 2,
+        "fromRevision": 1,
+        "toRevision": 2
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-1-search",
+      "seq": 14,
+      "worldTimeMinutes": 2,
+      "type": "SearchRecorded",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-location"
+      ],
+      "payload": {
+        "commandId": "mixed-1",
+        "elapsedMinutes": 1,
+        "committedRevision": 2,
+        "observedAt": 2,
+        "rule": "search-v1",
+        "request": {
+          "actorId": "prototype-player",
+          "locationId": "prototype-location",
+          "expectedWorldRevision": 1
+        },
+        "discoveredItemId": "prototype-tin"
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-1-discovery",
+      "seq": 15,
+      "worldTimeMinutes": 2,
+      "type": "ItemDiscovered",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-tin"
+      ],
+      "payload": {
+        "rule": "search-discovery-v1",
+        "commandId": "mixed-1",
+        "itemId": "prototype-tin",
+        "locationId": "prototype-location",
+        "observedAt": 2
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-2-time",
+      "seq": 16,
+      "worldTimeMinutes": 3,
+      "type": "TimeAdvanced",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-tin"
+      ],
+      "payload": {
+        "rule": "inspect-v1",
+        "commandId": "mixed-2",
+        "fromMinutes": 2,
+        "toMinutes": 3,
+        "fromRevision": 2,
+        "toRevision": 3
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-2-inspection",
+      "seq": 17,
+      "worldTimeMinutes": 3,
+      "type": "InspectionRecorded",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-tin"
+      ],
+      "payload": {
+        "commandId": "mixed-2",
+        "elapsedMinutes": 1,
+        "committedRevision": 3,
+        "observedAt": 3,
+        "rule": "inspect-v1",
+        "request": {
+          "actorId": "prototype-player",
+          "locationId": "prototype-location",
+          "expectedWorldRevision": 2,
+          "itemId": "prototype-tin"
+        },
+        "appearance": "open-metal-tin-v1"
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-3-time",
+      "seq": 18,
+      "worldTimeMinutes": 4,
+      "type": "TimeAdvanced",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-cabinet"
+      ],
+      "payload": {
+        "rule": "cabinet-search-v2",
+        "commandId": "mixed-3",
+        "fromMinutes": 3,
+        "toMinutes": 4,
+        "fromRevision": 3,
+        "toRevision": 4
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-3-cabinet-search",
+      "seq": 19,
+      "worldTimeMinutes": 4,
+      "type": "CabinetSearchRecorded",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-cabinet"
+      ],
+      "payload": {
+        "rule": "cabinet-search-v2",
+        "commandId": "mixed-3",
+        "request": {
+          "actorId": "prototype-player",
+          "locationId": "prototype-location",
+          "cabinetId": "prototype-cabinet",
+          "expectedWorldRevision": 3
+        },
+        "elapsedMinutes": 1,
+        "observedAt": 4,
+        "committedRevision": 4,
+        "discoveredItemId": "prototype-bottled-water",
+        "waterLocation": "cabinet"
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-3-cabinet-discovery",
+      "seq": 20,
+      "worldTimeMinutes": 4,
+      "type": "CabinetContentDiscovered",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-bottled-water"
+      ],
+      "payload": {
+        "rule": "cabinet-discovery-v1",
+        "commandId": "mixed-3",
+        "itemId": "prototype-bottled-water",
+        "cabinetId": "prototype-cabinet",
+        "locationId": "prototype-location",
+        "observedAt": 4
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-4-time",
+      "seq": 21,
+      "worldTimeMinutes": 5,
+      "type": "TimeAdvanced",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-bottled-water"
+      ],
+      "payload": {
+        "rule": "pick_up-v2",
+        "commandId": "mixed-4",
+        "fromMinutes": 4,
+        "toMinutes": 5,
+        "fromRevision": 4,
+        "toRevision": 5
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-4-transfer",
+      "seq": 22,
+      "worldTimeMinutes": 5,
+      "type": "ItemTransferred",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-bottled-water"
+      ],
+      "payload": {
+        "rule": "pick_up-v2",
+        "commandId": "mixed-4",
+        "request": {
+          "actorId": "prototype-player",
+          "locationId": "prototype-location",
+          "itemId": "prototype-bottled-water",
+          "expectedWorldRevision": 4
+        },
+        "elapsedMinutes": 1,
+        "observedAt": 5,
+        "committedRevision": 5,
+        "from": {
+          "kind": "container",
+          "id": "prototype-cabinet"
+        },
+        "to": {
+          "kind": "player",
+          "id": "prototype-player"
+        },
+        "count": 1,
+        "weightKg": 0.5,
+        "beforeCarryWeightKg": 0,
+        "afterCarryWeightKg": 0.5,
+        "perceptionSourceEventId": "evt-mixed-3-cabinet-discovery"
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-5-time",
+      "seq": 23,
+      "worldTimeMinutes": 6,
+      "type": "TimeAdvanced",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-door-gap"
+      ],
+      "payload": {
+        "rule": "door-observe-v1",
+        "commandId": "mixed-5",
+        "fromMinutes": 5,
+        "toMinutes": 6,
+        "fromRevision": 5,
+        "toRevision": 6
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-5-door",
+      "seq": 24,
+      "worldTimeMinutes": 6,
+      "type": "DoorObservationRecorded",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-door-gap"
+      ],
+      "payload": {
+        "rule": "door-observe-v1",
+        "commandId": "mixed-5",
+        "request": {
+          "actorId": "prototype-player",
+          "locationId": "prototype-location",
+          "doorId": "prototype-door-gap",
+          "expectedWorldRevision": 5
+        },
+        "elapsedMinutes": 1,
+        "committedRevision": 6,
+        "observedAt": 6,
+        "visual": "none",
+        "noticed": true,
+        "visualRoll": 0.6164041024167091,
+        "noticeRoll": 0.07161863497458398,
+        "beforeAlertness": 40,
+        "afterAlertness": 50,
+        "rngBefore": {
+          "algorithm": "xorshift32-v1",
+          "state": 67634689
+        },
+        "rngAfter": {
+          "algorithm": "xorshift32-v1",
+          "state": 307599695
+        }
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-5-door-notice",
+      "seq": 25,
+      "worldTimeMinutes": 6,
+      "type": "NPCAlertnessChanged",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-witness"
+      ],
+      "payload": {
+        "rule": "door-notice-v1",
+        "commandId": "mixed-5",
+        "npcId": "prototype-witness",
+        "playerId": "prototype-player",
+        "locationId": "prototype-location",
+        "observedAt": 6,
+        "fromAlertness": 40,
+        "toAlertness": 50
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-5-door-sound",
+      "seq": 26,
+      "worldTimeMinutes": 6,
+      "type": "DoorReactionHeard",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-door-gap"
+      ],
+      "payload": {
+        "rule": "door-reaction-v1",
+        "commandId": "mixed-5",
+        "doorId": "prototype-door-gap",
+        "npcId": "prototype-witness",
+        "observedAt": 6,
+        "cue": "cloth-rustle-v1"
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-6-time",
+      "seq": 27,
+      "worldTimeMinutes": 7,
+      "type": "TimeAdvanced",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-tin"
+      ],
+      "payload": {
+        "rule": "pick_up-v2",
+        "commandId": "mixed-6",
+        "fromMinutes": 6,
+        "toMinutes": 7,
+        "fromRevision": 6,
+        "toRevision": 7
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-6-transfer",
+      "seq": 28,
+      "worldTimeMinutes": 7,
+      "type": "ItemTransferred",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-tin"
+      ],
+      "payload": {
+        "rule": "pick_up-v2",
+        "commandId": "mixed-6",
+        "request": {
+          "actorId": "prototype-player",
+          "locationId": "prototype-location",
+          "itemId": "prototype-tin",
+          "expectedWorldRevision": 6
+        },
+        "elapsedMinutes": 1,
+        "observedAt": 7,
+        "committedRevision": 7,
+        "from": {
+          "kind": "location",
+          "id": "prototype-location"
+        },
+        "to": {
+          "kind": "player",
+          "id": "prototype-player"
+        },
+        "count": 1,
+        "weightKg": 0.05,
+        "beforeCarryWeightKg": 0.5,
+        "afterCarryWeightKg": 0.55,
+        "perceptionSourceEventId": "evt-mixed-1-discovery"
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-7-time",
+      "seq": 29,
+      "worldTimeMinutes": 8,
+      "type": "TimeAdvanced",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-cabinet"
+      ],
+      "payload": {
+        "rule": "cabinet-search-v2",
+        "commandId": "mixed-7",
+        "fromMinutes": 7,
+        "toMinutes": 8,
+        "fromRevision": 7,
+        "toRevision": 8
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-7-cabinet-search",
+      "seq": 30,
+      "worldTimeMinutes": 8,
+      "type": "CabinetSearchRecorded",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-cabinet"
+      ],
+      "payload": {
+        "rule": "cabinet-search-v2",
+        "commandId": "mixed-7",
+        "request": {
+          "actorId": "prototype-player",
+          "locationId": "prototype-location",
+          "cabinetId": "prototype-cabinet",
+          "expectedWorldRevision": 7
+        },
+        "elapsedMinutes": 1,
+        "observedAt": 8,
+        "committedRevision": 8,
+        "discoveredItemId": null,
+        "waterLocation": "player"
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-8-time",
+      "seq": 31,
+      "worldTimeMinutes": 9,
+      "type": "TimeAdvanced",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-corridor"
+      ],
+      "payload": {
+        "rule": "move-v1",
+        "commandId": "mixed-8",
+        "fromMinutes": 8,
+        "toMinutes": 9,
+        "fromRevision": 8,
+        "toRevision": 9
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-8-movement",
+      "seq": 32,
+      "worldTimeMinutes": 9,
+      "type": "PlayerMoved",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-corridor"
+      ],
+      "payload": {
+        "commandId": "mixed-8",
+        "elapsedMinutes": 1,
+        "committedRevision": 9,
+        "observedAt": 9,
+        "rule": "move-v1",
+        "request": {
+          "actorId": "prototype-player",
+          "locationId": "prototype-location",
+          "expectedWorldRevision": 8,
+          "destinationId": "prototype-corridor"
+        }
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-9-time",
+      "seq": 33,
+      "worldTimeMinutes": 10,
+      "type": "TimeAdvanced",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-corridor"
+      ],
+      "payload": {
+        "rule": "observe-v1",
+        "commandId": "mixed-9",
+        "fromMinutes": 9,
+        "toMinutes": 10,
+        "fromRevision": 9,
+        "toRevision": 10
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-9-observation",
+      "seq": 34,
+      "worldTimeMinutes": 10,
+      "type": "ObservationRecorded",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-corridor"
+      ],
+      "payload": {
+        "commandId": "mixed-9",
+        "elapsedMinutes": 1,
+        "committedRevision": 10,
+        "observedAt": 10,
+        "rule": "observe-v1",
+        "request": {
+          "actorId": "prototype-player",
+          "locationId": "prototype-corridor",
+          "expectedWorldRevision": 9
+        },
+        "visibility": "dark"
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-10-time",
+      "seq": 35,
+      "worldTimeMinutes": 11,
+      "type": "TimeAdvanced",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-location"
+      ],
+      "payload": {
+        "rule": "move-v1",
+        "commandId": "mixed-10",
+        "fromMinutes": 10,
+        "toMinutes": 11,
+        "fromRevision": 10,
+        "toRevision": 11
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-10-movement",
+      "seq": 36,
+      "worldTimeMinutes": 11,
+      "type": "PlayerMoved",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-location"
+      ],
+      "payload": {
+        "commandId": "mixed-10",
+        "elapsedMinutes": 1,
+        "committedRevision": 11,
+        "observedAt": 11,
+        "rule": "move-v1",
+        "request": {
+          "actorId": "prototype-player",
+          "locationId": "prototype-corridor",
+          "expectedWorldRevision": 10,
+          "destinationId": "prototype-location"
+        }
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-11-time",
+      "seq": 37,
+      "worldTimeMinutes": 12,
+      "type": "TimeAdvanced",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-door-gap"
+      ],
+      "payload": {
+        "rule": "door-observe-v1",
+        "commandId": "mixed-11",
+        "fromMinutes": 11,
+        "toMinutes": 12,
+        "fromRevision": 11,
+        "toRevision": 12
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-11-door",
+      "seq": 38,
+      "worldTimeMinutes": 12,
+      "type": "DoorObservationRecorded",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-door-gap"
+      ],
+      "payload": {
+        "rule": "door-observe-v1",
+        "commandId": "mixed-11",
+        "request": {
+          "actorId": "prototype-player",
+          "locationId": "prototype-location",
+          "doorId": "prototype-door-gap",
+          "expectedWorldRevision": 11
+        },
+        "elapsedMinutes": 1,
+        "committedRevision": 12,
+        "observedAt": 12,
+        "visual": "none",
+        "noticed": true,
+        "visualRoll": 0.5584883580449969,
+        "noticeRoll": 0.17357419803738594,
+        "beforeAlertness": 50,
+        "afterAlertness": 60,
+        "rngBefore": {
+          "algorithm": "xorshift32-v1",
+          "state": 307599695
+        },
+        "rngAfter": {
+          "algorithm": "xorshift32-v1",
+          "state": 745495504
+        }
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-11-door-notice",
+      "seq": 39,
+      "worldTimeMinutes": 12,
+      "type": "NPCAlertnessChanged",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-witness"
+      ],
+      "payload": {
+        "rule": "door-notice-v1",
+        "commandId": "mixed-11",
+        "npcId": "prototype-witness",
+        "playerId": "prototype-player",
+        "locationId": "prototype-location",
+        "observedAt": 12,
+        "fromAlertness": 50,
+        "toAlertness": 60
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-11-door-sound",
+      "seq": 40,
+      "worldTimeMinutes": 12,
+      "type": "DoorReactionHeard",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-door-gap"
+      ],
+      "payload": {
+        "rule": "door-reaction-v1",
+        "commandId": "mixed-11",
+        "doorId": "prototype-door-gap",
+        "npcId": "prototype-witness",
+        "observedAt": 12,
+        "cue": "cloth-rustle-v1"
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-12-time",
+      "seq": 41,
+      "worldTimeMinutes": 13,
+      "type": "TimeAdvanced",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-location"
+      ],
+      "payload": {
+        "rule": "search-v1",
+        "commandId": "mixed-12",
+        "fromMinutes": 12,
+        "toMinutes": 13,
+        "fromRevision": 12,
+        "toRevision": 13
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-12-search",
+      "seq": 42,
+      "worldTimeMinutes": 13,
+      "type": "SearchRecorded",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-location"
+      ],
+      "payload": {
+        "commandId": "mixed-12",
+        "elapsedMinutes": 1,
+        "committedRevision": 13,
+        "observedAt": 13,
+        "rule": "search-v1",
+        "request": {
+          "actorId": "prototype-player",
+          "locationId": "prototype-location",
+          "expectedWorldRevision": 12
+        },
+        "discoveredItemId": null
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-13-time",
+      "seq": 43,
+      "worldTimeMinutes": 14,
+      "type": "TimeAdvanced",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-cabinet"
+      ],
+      "payload": {
+        "rule": "cabinet-search-v2",
+        "commandId": "mixed-13",
+        "fromMinutes": 13,
+        "toMinutes": 14,
+        "fromRevision": 13,
+        "toRevision": 14
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-13-cabinet-search",
+      "seq": 44,
+      "worldTimeMinutes": 14,
+      "type": "CabinetSearchRecorded",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-cabinet"
+      ],
+      "payload": {
+        "rule": "cabinet-search-v2",
+        "commandId": "mixed-13",
+        "request": {
+          "actorId": "prototype-player",
+          "locationId": "prototype-location",
+          "cabinetId": "prototype-cabinet",
+          "expectedWorldRevision": 13
+        },
+        "elapsedMinutes": 1,
+        "observedAt": 14,
+        "committedRevision": 14,
+        "discoveredItemId": null,
+        "waterLocation": "player"
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-14-time",
+      "seq": 45,
+      "worldTimeMinutes": 15,
+      "type": "TimeAdvanced",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-door-gap"
+      ],
+      "payload": {
+        "rule": "door-observe-v1",
+        "commandId": "mixed-14",
+        "fromMinutes": 14,
+        "toMinutes": 15,
+        "fromRevision": 14,
+        "toRevision": 15
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-14-door",
+      "seq": 46,
+      "worldTimeMinutes": 15,
+      "type": "DoorObservationRecorded",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-door-gap"
+      ],
+      "payload": {
+        "rule": "door-observe-v1",
+        "commandId": "mixed-14",
+        "request": {
+          "actorId": "prototype-player",
+          "locationId": "prototype-location",
+          "doorId": "prototype-door-gap",
+          "expectedWorldRevision": 14
+        },
+        "elapsedMinutes": 1,
+        "committedRevision": 15,
+        "observedAt": 15,
+        "visual": "shadow",
+        "noticed": true,
+        "visualRoll": 0.14725036034360528,
+        "noticeRoll": 0.10145739885047078,
+        "beforeAlertness": 60,
+        "afterAlertness": 70,
+        "rngBefore": {
+          "algorithm": "xorshift32-v1",
+          "state": 745495504
+        },
+        "rngAfter": {
+          "algorithm": "xorshift32-v1",
+          "state": 435756210
+        }
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-14-door-notice",
+      "seq": 47,
+      "worldTimeMinutes": 15,
+      "type": "NPCAlertnessChanged",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-witness"
+      ],
+      "payload": {
+        "rule": "door-notice-v1",
+        "commandId": "mixed-14",
+        "npcId": "prototype-witness",
+        "playerId": "prototype-player",
+        "locationId": "prototype-location",
+        "observedAt": 15,
+        "fromAlertness": 60,
+        "toAlertness": 70
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-14-door-sound",
+      "seq": 48,
+      "worldTimeMinutes": 15,
+      "type": "DoorReactionHeard",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-door-gap"
+      ],
+      "payload": {
+        "rule": "door-reaction-v1",
+        "commandId": "mixed-14",
+        "doorId": "prototype-door-gap",
+        "npcId": "prototype-witness",
+        "observedAt": 15,
+        "cue": "cloth-rustle-v1"
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-15-time",
+      "seq": 49,
+      "worldTimeMinutes": 16,
+      "type": "TimeAdvanced",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-corridor"
+      ],
+      "payload": {
+        "rule": "move-v1",
+        "commandId": "mixed-15",
+        "fromMinutes": 15,
+        "toMinutes": 16,
+        "fromRevision": 15,
+        "toRevision": 16
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-15-movement",
+      "seq": 50,
+      "worldTimeMinutes": 16,
+      "type": "PlayerMoved",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-corridor"
+      ],
+      "payload": {
+        "commandId": "mixed-15",
+        "elapsedMinutes": 1,
+        "committedRevision": 16,
+        "observedAt": 16,
+        "rule": "move-v1",
+        "request": {
+          "actorId": "prototype-player",
+          "locationId": "prototype-location",
+          "expectedWorldRevision": 15,
+          "destinationId": "prototype-corridor"
+        }
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-16-time",
+      "seq": 51,
+      "worldTimeMinutes": 17,
+      "type": "TimeAdvanced",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-corridor"
+      ],
+      "payload": {
+        "rule": "observe-v1",
+        "commandId": "mixed-16",
+        "fromMinutes": 16,
+        "toMinutes": 17,
+        "fromRevision": 16,
+        "toRevision": 17
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-16-observation",
+      "seq": 52,
+      "worldTimeMinutes": 17,
+      "type": "ObservationRecorded",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-corridor"
+      ],
+      "payload": {
+        "commandId": "mixed-16",
+        "elapsedMinutes": 1,
+        "committedRevision": 17,
+        "observedAt": 17,
+        "rule": "observe-v1",
+        "request": {
+          "actorId": "prototype-player",
+          "locationId": "prototype-corridor",
+          "expectedWorldRevision": 16
+        },
+        "visibility": "dark"
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-17-time",
+      "seq": 53,
+      "worldTimeMinutes": 18,
+      "type": "TimeAdvanced",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-location"
+      ],
+      "payload": {
+        "rule": "move-v1",
+        "commandId": "mixed-17",
+        "fromMinutes": 17,
+        "toMinutes": 18,
+        "fromRevision": 17,
+        "toRevision": 18
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-17-movement",
+      "seq": 54,
+      "worldTimeMinutes": 18,
+      "type": "PlayerMoved",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-location"
+      ],
+      "payload": {
+        "commandId": "mixed-17",
+        "elapsedMinutes": 1,
+        "committedRevision": 18,
+        "observedAt": 18,
+        "rule": "move-v1",
+        "request": {
+          "actorId": "prototype-player",
+          "locationId": "prototype-corridor",
+          "expectedWorldRevision": 17,
+          "destinationId": "prototype-location"
+        }
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-18-time",
+      "seq": 55,
+      "worldTimeMinutes": 19,
+      "type": "TimeAdvanced",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-door-gap"
+      ],
+      "payload": {
+        "rule": "door-observe-v1",
+        "commandId": "mixed-18",
+        "fromMinutes": 18,
+        "toMinutes": 19,
+        "fromRevision": 18,
+        "toRevision": 19
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-18-door",
+      "seq": 56,
+      "worldTimeMinutes": 19,
+      "type": "DoorObservationRecorded",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-door-gap"
+      ],
+      "payload": {
+        "rule": "door-observe-v1",
+        "commandId": "mixed-18",
+        "request": {
+          "actorId": "prototype-player",
+          "locationId": "prototype-location",
+          "doorId": "prototype-door-gap",
+          "expectedWorldRevision": 18
+        },
+        "elapsedMinutes": 1,
+        "committedRevision": 19,
+        "observedAt": 19,
+        "visual": "none",
+        "noticed": true,
+        "visualRoll": 0.46691043046303093,
+        "noticeRoll": 0.6789571912959218,
+        "beforeAlertness": 70,
+        "afterAlertness": 80,
+        "rngBefore": {
+          "algorithm": "xorshift32-v1",
+          "state": 435756210
+        },
+        "rngAfter": {
+          "algorithm": "xorshift32-v1",
+          "state": 2916098932
+        }
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-18-door-notice",
+      "seq": 57,
+      "worldTimeMinutes": 19,
+      "type": "NPCAlertnessChanged",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-witness"
+      ],
+      "payload": {
+        "rule": "door-notice-v1",
+        "commandId": "mixed-18",
+        "npcId": "prototype-witness",
+        "playerId": "prototype-player",
+        "locationId": "prototype-location",
+        "observedAt": 19,
+        "fromAlertness": 70,
+        "toAlertness": 80
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-18-door-sound",
+      "seq": 58,
+      "worldTimeMinutes": 19,
+      "type": "DoorReactionHeard",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-door-gap"
+      ],
+      "payload": {
+        "rule": "door-reaction-v1",
+        "commandId": "mixed-18",
+        "doorId": "prototype-door-gap",
+        "npcId": "prototype-witness",
+        "observedAt": 19,
+        "cue": "cloth-rustle-v1"
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-19-time",
+      "seq": 59,
+      "worldTimeMinutes": 20,
+      "type": "TimeAdvanced",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-cabinet"
+      ],
+      "payload": {
+        "rule": "cabinet-search-v2",
+        "commandId": "mixed-19",
+        "fromMinutes": 19,
+        "toMinutes": 20,
+        "fromRevision": 19,
+        "toRevision": 20
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-19-cabinet-search",
+      "seq": 60,
+      "worldTimeMinutes": 20,
+      "type": "CabinetSearchRecorded",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-cabinet"
+      ],
+      "payload": {
+        "rule": "cabinet-search-v2",
+        "commandId": "mixed-19",
+        "request": {
+          "actorId": "prototype-player",
+          "locationId": "prototype-location",
+          "cabinetId": "prototype-cabinet",
+          "expectedWorldRevision": 19
+        },
+        "elapsedMinutes": 1,
+        "observedAt": 20,
+        "committedRevision": 20,
+        "discoveredItemId": null,
+        "waterLocation": "player"
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-20-time",
+      "seq": 61,
+      "worldTimeMinutes": 21,
+      "type": "TimeAdvanced",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-location"
+      ],
+      "payload": {
+        "rule": "search-v1",
+        "commandId": "mixed-20",
+        "fromMinutes": 20,
+        "toMinutes": 21,
+        "fromRevision": 20,
+        "toRevision": 21
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-20-search",
+      "seq": 62,
+      "worldTimeMinutes": 21,
+      "type": "SearchRecorded",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-location"
+      ],
+      "payload": {
+        "commandId": "mixed-20",
+        "elapsedMinutes": 1,
+        "committedRevision": 21,
+        "observedAt": 21,
+        "rule": "search-v1",
+        "request": {
+          "actorId": "prototype-player",
+          "locationId": "prototype-location",
+          "expectedWorldRevision": 20
+        },
+        "discoveredItemId": null
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-21-time",
+      "seq": 63,
+      "worldTimeMinutes": 22,
+      "type": "TimeAdvanced",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-location"
+      ],
+      "payload": {
+        "rule": "observe-v1",
+        "commandId": "mixed-21",
+        "fromMinutes": 21,
+        "toMinutes": 22,
+        "fromRevision": 21,
+        "toRevision": 22
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-21-observation",
+      "seq": 64,
+      "worldTimeMinutes": 22,
+      "type": "ObservationRecorded",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-location"
+      ],
+      "payload": {
+        "commandId": "mixed-21",
+        "elapsedMinutes": 1,
+        "committedRevision": 22,
+        "observedAt": 22,
+        "rule": "observe-v1",
+        "request": {
+          "actorId": "prototype-player",
+          "locationId": "prototype-location",
+          "expectedWorldRevision": 21
+        },
+        "visibility": "clear"
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-22-time",
+      "seq": 65,
+      "worldTimeMinutes": 23,
+      "type": "TimeAdvanced",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-door-gap"
+      ],
+      "payload": {
+        "rule": "door-observe-v1",
+        "commandId": "mixed-22",
+        "fromMinutes": 22,
+        "toMinutes": 23,
+        "fromRevision": 22,
+        "toRevision": 23
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-22-door",
+      "seq": 66,
+      "worldTimeMinutes": 23,
+      "type": "DoorObservationRecorded",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-door-gap"
+      ],
+      "payload": {
+        "rule": "door-observe-v1",
+        "commandId": "mixed-22",
+        "request": {
+          "actorId": "prototype-player",
+          "locationId": "prototype-location",
+          "doorId": "prototype-door-gap",
+          "expectedWorldRevision": 22
+        },
+        "elapsedMinutes": 1,
+        "committedRevision": 23,
+        "observedAt": 23,
+        "visual": "none",
+        "noticed": true,
+        "visualRoll": 0.6186525102239102,
+        "noticeRoll": 0.3480925092007965,
+        "beforeAlertness": 80,
+        "afterAlertness": 90,
+        "rngBefore": {
+          "algorithm": "xorshift32-v1",
+          "state": 2916098932
+        },
+        "rngAfter": {
+          "algorithm": "xorshift32-v1",
+          "state": 1495045943
+        }
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-22-door-notice",
+      "seq": 67,
+      "worldTimeMinutes": 23,
+      "type": "NPCAlertnessChanged",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-witness"
+      ],
+      "payload": {
+        "rule": "door-notice-v1",
+        "commandId": "mixed-22",
+        "npcId": "prototype-witness",
+        "playerId": "prototype-player",
+        "locationId": "prototype-location",
+        "observedAt": 23,
+        "fromAlertness": 80,
+        "toAlertness": 90
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-22-door-sound",
+      "seq": 68,
+      "worldTimeMinutes": 23,
+      "type": "DoorReactionHeard",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-door-gap"
+      ],
+      "payload": {
+        "rule": "door-reaction-v1",
+        "commandId": "mixed-22",
+        "doorId": "prototype-door-gap",
+        "npcId": "prototype-witness",
+        "observedAt": 23,
+        "cue": "cloth-rustle-v1"
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-23-time",
+      "seq": 69,
+      "worldTimeMinutes": 24,
+      "type": "TimeAdvanced",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-location"
+      ],
+      "payload": {
+        "rule": "observe-v1",
+        "commandId": "mixed-23",
+        "fromMinutes": 23,
+        "toMinutes": 24,
+        "fromRevision": 23,
+        "toRevision": 24
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-23-observation",
+      "seq": 70,
+      "worldTimeMinutes": 24,
+      "type": "ObservationRecorded",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-location"
+      ],
+      "payload": {
+        "commandId": "mixed-23",
+        "elapsedMinutes": 1,
+        "committedRevision": 24,
+        "observedAt": 24,
+        "rule": "observe-v1",
+        "request": {
+          "actorId": "prototype-player",
+          "locationId": "prototype-location",
+          "expectedWorldRevision": 23
+        },
+        "visibility": "clear"
+      },
+      "visibility": "private"
+    }
+  ],
+  "rngState": {
+    "algorithm": "xorshift32-v1",
+    "state": 1495045943
+  }
+}

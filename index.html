@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>末日余生 · 居民楼交互原型</title>
+    <link rel="stylesheet" href="/src/ui/style.css" />
+  </head>
+  <body>
+    <main id="app">
+      <header class="masthead"><span class="mark" aria-hidden="true">余</span><div><p class="eyebrow">观察体验</p><h1>末日余生</h1></div><span class="badge">交互原型</span></header>
+      <section id="intro" class="intro card" aria-labelledby="intro-title">
+        <p class="eyebrow">从一次观察开始</p>
+        <h2 id="intro-title">停下脚步，<br />写下你的下一步。</h2>
+        <p>在废弃居民楼里，用一句话或建议按钮观察四周与门缝、搜索房间、检查和拾取已发现物品，或沿已知路线移动。行动经过规则结算后，时间与行动叙事才会更新。</p>
+        <p class="scope">当前可交互区域是房间与相邻走廊。你可以先创建角色，也可以直接进入固定原型。本地解释能力有限；支持本机三个存档槽，手动保存或主动读档后可明确开启该槽自动保存。可下载所选槽已保存的存档，有效 v1 文件可经确认导入空槽或替换健康槽，原存档保留为上一备份；可另行检查并确认恢复有效上一备份，之后主动读取；不支持迁移。未保存的变化会丢失，还不是可长期游玩的完整游戏。</p>
+        <button id="enter" class="primary" type="button">进入观察体验 <span aria-hidden="true">→</span></button>
+        <p id="start-feedback" role="status"></p>
+      </section>
+      <section id="experience" hidden aria-label="观察体验">
+        <div class="world-line"><p id="clock" aria-label="世界时间"></p><span class="unsaved">进度未保存</span></div>
+        <div class="experience-grid">
+          <section class="story card" aria-labelledby="story-title">
+            <p class="eyebrow">你的选择之后</p><h2 id="story-title">行动结果</h2>
+            <p id="narrative" class="narrative"></p>
+            <details id="recent" hidden><summary>最近行动</summary><ol id="history"></ol></details>
+          </section>
+          <section class="actions card" aria-labelledby="action-title">
+            <h2 id="action-title">你的行动</h2>
+            <p class="hint">建议只是起点，你也可以自由表达。</p>
+            <button id="observe" class="suggestion" type="button">观察四周 <span aria-hidden="true">↗</span></button>
+            <p id="current-location"></p><div id="move-targets"></div><div id="inspect-targets" aria-label="当前可检查的物品"></div>
+            <form id="action-form">
+              <label for="action">自由行动</label>
+              <textarea id="action" name="action" rows="3" aria-describedby="input-help" placeholder="例如：看看周围、搜索房间、前往走廊；也可以提出其他行动"></textarea>
+              <p id="input-help" class="hint">Enter 换行 · Ctrl / ⌘ + Enter 提交<br />暂不支持的行动会明确说明，不会替你执行。</p>
+              <button id="submit" class="primary" type="submit">提交行动 <span aria-hidden="true">→</span></button>
+            </form>
+            <p id="feedback" role="status" aria-live="polite" aria-atomic="true"></p>
+            <button id="retry" class="suggestion" type="button" hidden>重试确认上次行动</button>
+          </section>
+        </div>
+        <p id="capability" class="capability"></p>
+      </section>
+      <noscript>此观察体验需要 JavaScript 才能结算行动。当前未开始任何行动。</noscript>
+    </main>
+    <script type="module" src="/src/bootstrap.ts"></script>
+  </body>
+</html>

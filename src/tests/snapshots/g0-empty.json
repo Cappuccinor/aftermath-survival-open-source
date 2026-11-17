@@ -1,0 +1,54 @@
+{
+  "stateSchema": "g0-world-v1",
+  "campaign": {
+    "saveId": "save-1",
+    "schemaVersion": null,
+    "difficulty": "test_fixture",
+    "seed": 1,
+    "createdAt": "2026-10-23T00:00:00.000Z",
+    "gameClockMinutes": 0,
+    "worldRevision": 0,
+    "offlineProgressionEnabled": false
+  },
+  "player": {
+    "playerId": "player-1",
+    "background": "",
+    "locationId": "location-1",
+    "stats": {
+      "hp": 100,
+      "stamina": 100,
+      "mental": 100,
+      "hunger": 0,
+      "thirst": 0,
+      "fatigue": 0,
+      "infection": 0,
+      "pain": 0,
+      "bodyTempC": 37,
+      "carryWeightKg": 0
+    },
+    "skills": {},
+    "knownFactIds": []
+  },
+  "locations": {
+    "location-1": {
+      "locationId": "location-1",
+      "name": "G0 测试地点",
+      "adjacentLocationIds": [],
+      "light": 0,
+      "searched": false
+    }
+  },
+  "items": {},
+  "knowledge": [],
+  "npcs": [],
+  "relationships": [],
+  "factions": [],
+  "bases": [],
+  "vehicles": [],
+  "jobs": [],
+  "eventJournal": [],
+  "rngState": {
+    "algorithm": "xorshift32-v1",
+    "state": 1
+  }
+}

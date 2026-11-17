@@ -1,0 +1,658 @@
+{
+  "stateSchema": "g0-world-v1",
+  "campaign": {
+    "saveId": "legacy-pickup-world",
+    "schemaVersion": null,
+    "difficulty": "test_fixture",
+    "seed": 2944,
+    "createdAt": "2026-10-24T00:00:00.000Z",
+    "gameClockMinutes": 7,
+    "worldRevision": 7,
+    "offlineProgressionEnabled": false
+  },
+  "player": {
+    "playerId": "legacy-player",
+    "background": "",
+    "locationId": "prototype-location",
+    "stats": {
+      "hp": 100,
+      "stamina": 100,
+      "mental": 100,
+      "hunger": 0,
+      "thirst": 0,
+      "fatigue": 0,
+      "infection": 0,
+      "pain": 0,
+      "bodyTempC": 37,
+      "carryWeightKg": 0
+    },
+    "skills": {
+      "perception": 20,
+      "stealth": 20,
+      "survival": 20
+    },
+    "knownFactIds": [
+      "known-prototype-route",
+      "known-door-prototype-door-gap",
+      "search-prototype-location-result",
+      "seen-item-prototype-tin",
+      "inspection-prototype-tin-appearance",
+      "door-observation-legacy-pickup-2",
+      "door-heard-legacy-pickup-2",
+      "movement-legacy-player-location",
+      "sight-prototype-corridor-light"
+    ]
+  },
+  "locations": {
+    "prototype-location": {
+      "locationId": "prototype-location",
+      "name": "G0 测试地点",
+      "adjacentLocationIds": [
+        "prototype-corridor"
+      ],
+      "light": 1,
+      "searched": true
+    },
+    "prototype-corridor": {
+      "locationId": "prototype-corridor",
+      "name": "走廊",
+      "adjacentLocationIds": [
+        "prototype-location"
+      ],
+      "light": 0.2,
+      "searched": false
+    }
+  },
+  "items": {
+    "prototype-tin": {
+      "itemId": "prototype-tin",
+      "typeId": "empty-tin",
+      "position": {
+        "kind": "location",
+        "id": "prototype-location"
+      },
+      "count": 1,
+      "weightKg": 0.05,
+      "durability": 100,
+      "condition": "",
+      "metadata": {}
+    }
+  },
+  "knowledge": [
+    {
+      "knowerId": "legacy-player",
+      "factId": "known-prototype-route",
+      "source": "evt-initial-route",
+      "confidence": 1,
+      "observedAt": 0
+    },
+    {
+      "knowerId": "legacy-player",
+      "factId": "known-door-prototype-door-gap",
+      "source": "evt-initial-door-gap",
+      "confidence": 1,
+      "observedAt": 0
+    },
+    {
+      "knowerId": "legacy-player",
+      "factId": "seen-item-prototype-tin",
+      "source": "evt-legacy-pickup-0-discovery",
+      "confidence": 1,
+      "observedAt": 1
+    },
+    {
+      "knowerId": "legacy-player",
+      "factId": "inspection-prototype-tin-appearance",
+      "source": "evt-legacy-pickup-1-inspection",
+      "confidence": 1,
+      "observedAt": 2
+    },
+    {
+      "knowerId": "legacy-player",
+      "factId": "door-observation-legacy-pickup-2",
+      "source": "evt-legacy-pickup-2-door",
+      "confidence": 1,
+      "observedAt": 3
+    },
+    {
+      "knowerId": "legacy-player",
+      "factId": "door-heard-legacy-pickup-2",
+      "source": "evt-legacy-pickup-2-door-sound",
+      "confidence": 1,
+      "observedAt": 3
+    },
+    {
+      "knowerId": "legacy-player",
+      "factId": "sight-prototype-corridor-light",
+      "source": "evt-legacy-pickup-4-observation",
+      "confidence": 1,
+      "observedAt": 5
+    },
+    {
+      "knowerId": "legacy-player",
+      "factId": "movement-legacy-player-location",
+      "source": "evt-legacy-pickup-5-movement",
+      "confidence": 1,
+      "observedAt": 6
+    },
+    {
+      "knowerId": "legacy-player",
+      "factId": "search-prototype-location-result",
+      "source": "evt-legacy-pickup-6-search",
+      "confidence": 1,
+      "observedAt": 7
+    }
+  ],
+  "npcs": [
+    {
+      "kind": "g1-door-witness-v1",
+      "npcId": "prototype-witness",
+      "locationId": "prototype-corridor",
+      "appearance": "worn-shoes-v1",
+      "alertness": 40,
+      "firstNoticed": {
+        "playerId": "legacy-player",
+        "locationId": "prototype-location",
+        "observedAt": 3,
+        "sourceEventId": "evt-legacy-pickup-2-door-notice"
+      }
+    }
+  ],
+  "relationships": [],
+  "factions": [],
+  "bases": [],
+  "vehicles": [],
+  "jobs": [],
+  "eventJournal": [
+    {
+      "eventId": "evt-character-created",
+      "seq": 1,
+      "worldTimeMinutes": 0,
+      "type": "CharacterCreated",
+      "actorId": "legacy-player",
+      "targetIds": [
+        "legacy-player"
+      ],
+      "payload": {
+        "rule": "character-created-v1",
+        "initialRule": "character-start-v1",
+        "profile": {
+          "name": "旧门边角色",
+          "age": 28,
+          "gender": "",
+          "occupation": "木工",
+          "locationBackground": "房间",
+          "bodyCondition": "健康",
+          "personality": "谨慎",
+          "strengths": "",
+          "weaknesses": "",
+          "importantItems": "笔记本",
+          "companions": "",
+          "importantPerson": "家人",
+          "fear": "",
+          "wish": "活下去"
+        },
+        "skills": {
+          "perception": 20,
+          "stealth": 20,
+          "survival": 20
+        },
+        "initialStats": {
+          "hp": 100,
+          "stamina": 100,
+          "mental": 100,
+          "hunger": 0,
+          "thirst": 0,
+          "fatigue": 0,
+          "infection": 0,
+          "pain": 0,
+          "bodyTempC": 37,
+          "carryWeightKg": 0
+        },
+        "startLocationId": "prototype-location"
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-initial-route",
+      "seq": 2,
+      "worldTimeMinutes": 0,
+      "type": "KnownRouteInitialized",
+      "actorId": "legacy-player",
+      "targetIds": [
+        "prototype-location",
+        "prototype-corridor"
+      ],
+      "payload": {
+        "rule": "known-route-v1",
+        "roomId": "prototype-location",
+        "corridorId": "prototype-corridor"
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-initial-search",
+      "seq": 3,
+      "worldTimeMinutes": 0,
+      "type": "SearchScopeInitialized",
+      "actorId": "legacy-player",
+      "targetIds": [
+        "prototype-location"
+      ],
+      "payload": {
+        "rule": "search-scope-v1",
+        "locationId": "prototype-location",
+        "itemId": "prototype-tin"
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-initial-door-gap",
+      "seq": 4,
+      "worldTimeMinutes": 0,
+      "type": "DoorGapInitialized",
+      "actorId": "legacy-player",
+      "targetIds": [
+        "prototype-door-gap",
+        "prototype-location",
+        "prototype-corridor",
+        "prototype-witness"
+      ],
+      "payload": {
+        "rule": "door-gap-scope-v1",
+        "doorId": "prototype-door-gap",
+        "roomId": "prototype-location",
+        "corridorId": "prototype-corridor",
+        "npcId": "prototype-witness",
+        "gapOpen": true,
+        "initialAlertness": 30,
+        "initialRng": {
+          "algorithm": "xorshift32-v1",
+          "state": 2944
+        },
+        "perception": 20,
+        "stealth": 20,
+        "corridorLight": 0.2
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-legacy-pickup-0-time",
+      "seq": 5,
+      "worldTimeMinutes": 1,
+      "type": "TimeAdvanced",
+      "actorId": "legacy-player",
+      "targetIds": [
+        "prototype-location"
+      ],
+      "payload": {
+        "rule": "search-v1",
+        "commandId": "legacy-pickup-0",
+        "fromMinutes": 0,
+        "toMinutes": 1,
+        "fromRevision": 0,
+        "toRevision": 1
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-legacy-pickup-0-search",
+      "seq": 6,
+      "worldTimeMinutes": 1,
+      "type": "SearchRecorded",
+      "actorId": "legacy-player",
+      "targetIds": [
+        "prototype-location"
+      ],
+      "payload": {
+        "commandId": "legacy-pickup-0",
+        "elapsedMinutes": 1,
+        "committedRevision": 1,
+        "observedAt": 1,
+        "rule": "search-v1",
+        "request": {
+          "actorId": "legacy-player",
+          "locationId": "prototype-location",
+          "expectedWorldRevision": 0
+        },
+        "discoveredItemId": "prototype-tin"
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-legacy-pickup-0-discovery",
+      "seq": 7,
+      "worldTimeMinutes": 1,
+      "type": "ItemDiscovered",
+      "actorId": "legacy-player",
+      "targetIds": [
+        "prototype-tin"
+      ],
+      "payload": {
+        "rule": "search-discovery-v1",
+        "commandId": "legacy-pickup-0",
+        "itemId": "prototype-tin",
+        "locationId": "prototype-location",
+        "observedAt": 1
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-legacy-pickup-1-time",
+      "seq": 8,
+      "worldTimeMinutes": 2,
+      "type": "TimeAdvanced",
+      "actorId": "legacy-player",
+      "targetIds": [
+        "prototype-tin"
+      ],
+      "payload": {
+        "rule": "inspect-v1",
+        "commandId": "legacy-pickup-1",
+        "fromMinutes": 1,
+        "toMinutes": 2,
+        "fromRevision": 1,
+        "toRevision": 2
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-legacy-pickup-1-inspection",
+      "seq": 9,
+      "worldTimeMinutes": 2,
+      "type": "InspectionRecorded",
+      "actorId": "legacy-player",
+      "targetIds": [
+        "prototype-tin"
+      ],
+      "payload": {
+        "commandId": "legacy-pickup-1",
+        "elapsedMinutes": 1,
+        "committedRevision": 2,
+        "observedAt": 2,
+        "rule": "inspect-v1",
+        "request": {
+          "actorId": "legacy-player",
+          "locationId": "prototype-location",
+          "expectedWorldRevision": 1,
+          "itemId": "prototype-tin"
+        },
+        "appearance": "open-metal-tin-v1"
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-legacy-pickup-2-time",
+      "seq": 10,
+      "worldTimeMinutes": 3,
+      "type": "TimeAdvanced",
+      "actorId": "legacy-player",
+      "targetIds": [
+        "prototype-door-gap"
+      ],
+      "payload": {
+        "rule": "door-observe-v1",
+        "commandId": "legacy-pickup-2",
+        "fromMinutes": 2,
+        "toMinutes": 3,
+        "fromRevision": 2,
+        "toRevision": 3
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-legacy-pickup-2-door",
+      "seq": 11,
+      "worldTimeMinutes": 3,
+      "type": "DoorObservationRecorded",
+      "actorId": "legacy-player",
+      "targetIds": [
+        "prototype-door-gap"
+      ],
+      "payload": {
+        "rule": "door-observe-v1",
+        "commandId": "legacy-pickup-2",
+        "request": {
+          "actorId": "legacy-player",
+          "locationId": "prototype-location",
+          "doorId": "prototype-door-gap",
+          "expectedWorldRevision": 2
+        },
+        "elapsedMinutes": 1,
+        "committedRevision": 3,
+        "observedAt": 3,
+        "visual": "shadow",
+        "noticed": true,
+        "visualRoll": 0.1853244435042143,
+        "noticeRoll": 0.3602870188187808,
+        "beforeAlertness": 30,
+        "afterAlertness": 40,
+        "rngBefore": {
+          "algorithm": "xorshift32-v1",
+          "state": 2944
+        },
+        "rngAfter": {
+          "algorithm": "xorshift32-v1",
+          "state": 1547420963
+        }
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-legacy-pickup-2-door-notice",
+      "seq": 12,
+      "worldTimeMinutes": 3,
+      "type": "NPCAlertnessChanged",
+      "actorId": "legacy-player",
+      "targetIds": [
+        "prototype-witness"
+      ],
+      "payload": {
+        "rule": "door-notice-v1",
+        "commandId": "legacy-pickup-2",
+        "npcId": "prototype-witness",
+        "playerId": "legacy-player",
+        "locationId": "prototype-location",
+        "observedAt": 3,
+        "fromAlertness": 30,
+        "toAlertness": 40
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-legacy-pickup-2-door-sound",
+      "seq": 13,
+      "worldTimeMinutes": 3,
+      "type": "DoorReactionHeard",
+      "actorId": "legacy-player",
+      "targetIds": [
+        "prototype-door-gap"
+      ],
+      "payload": {
+        "rule": "door-reaction-v1",
+        "commandId": "legacy-pickup-2",
+        "doorId": "prototype-door-gap",
+        "npcId": "prototype-witness",
+        "observedAt": 3,
+        "cue": "cloth-rustle-v1"
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-legacy-pickup-3-time",
+      "seq": 14,
+      "worldTimeMinutes": 4,
+      "type": "TimeAdvanced",
+      "actorId": "legacy-player",
+      "targetIds": [
+        "prototype-corridor"
+      ],
+      "payload": {
+        "rule": "move-v1",
+        "commandId": "legacy-pickup-3",
+        "fromMinutes": 3,
+        "toMinutes": 4,
+        "fromRevision": 3,
+        "toRevision": 4
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-legacy-pickup-3-movement",
+      "seq": 15,
+      "worldTimeMinutes": 4,
+      "type": "PlayerMoved",
+      "actorId": "legacy-player",
+      "targetIds": [
+        "prototype-corridor"
+      ],
+      "payload": {
+        "commandId": "legacy-pickup-3",
+        "elapsedMinutes": 1,
+        "committedRevision": 4,
+        "observedAt": 4,
+        "rule": "move-v1",
+        "request": {
+          "actorId": "legacy-player",
+          "locationId": "prototype-location",
+          "expectedWorldRevision": 3,
+          "destinationId": "prototype-corridor"
+        }
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-legacy-pickup-4-time",
+      "seq": 16,
+      "worldTimeMinutes": 5,
+      "type": "TimeAdvanced",
+      "actorId": "legacy-player",
+      "targetIds": [
+        "prototype-corridor"
+      ],
+      "payload": {
+        "rule": "observe-v1",
+        "commandId": "legacy-pickup-4",
+        "fromMinutes": 4,
+        "toMinutes": 5,
+        "fromRevision": 4,
+        "toRevision": 5
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-legacy-pickup-4-observation",
+      "seq": 17,
+      "worldTimeMinutes": 5,
+      "type": "ObservationRecorded",
+      "actorId": "legacy-player",
+      "targetIds": [
+        "prototype-corridor"
+      ],
+      "payload": {
+        "commandId": "legacy-pickup-4",
+        "elapsedMinutes": 1,
+        "committedRevision": 5,
+        "observedAt": 5,
+        "rule": "observe-v1",
+        "request": {
+          "actorId": "legacy-player",
+          "locationId": "prototype-corridor",
+          "expectedWorldRevision": 4
+        },
+        "visibility": "dark"
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-legacy-pickup-5-time",
+      "seq": 18,
+      "worldTimeMinutes": 6,
+      "type": "TimeAdvanced",
+      "actorId": "legacy-player",
+      "targetIds": [
+        "prototype-location"
+      ],
+      "payload": {
+        "rule": "move-v1",
+        "commandId": "legacy-pickup-5",
+        "fromMinutes": 5,
+        "toMinutes": 6,
+        "fromRevision": 5,
+        "toRevision": 6
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-legacy-pickup-5-movement",
+      "seq": 19,
+      "worldTimeMinutes": 6,
+      "type": "PlayerMoved",
+      "actorId": "legacy-player",
+      "targetIds": [
+        "prototype-location"
+      ],
+      "payload": {
+        "commandId": "legacy-pickup-5",
+        "elapsedMinutes": 1,
+        "committedRevision": 6,
+        "observedAt": 6,
+        "rule": "move-v1",
+        "request": {
+          "actorId": "legacy-player",
+          "locationId": "prototype-corridor",
+          "expectedWorldRevision": 5,
+          "destinationId": "prototype-location"
+        }
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-legacy-pickup-6-time",
+      "seq": 20,
+      "worldTimeMinutes": 7,
+      "type": "TimeAdvanced",
+      "actorId": "legacy-player",
+      "targetIds": [
+        "prototype-location"
+      ],
+      "payload": {
+        "rule": "search-v1",
+        "commandId": "legacy-pickup-6",
+        "fromMinutes": 6,
+        "toMinutes": 7,
+        "fromRevision": 6,
+        "toRevision": 7
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-legacy-pickup-6-search",
+      "seq": 21,
+      "worldTimeMinutes": 7,
+      "type": "SearchRecorded",
+      "actorId": "legacy-player",
+      "targetIds": [
+        "prototype-location"
+      ],
+      "payload": {
+        "commandId": "legacy-pickup-6",
+        "elapsedMinutes": 1,
+        "committedRevision": 7,
+        "observedAt": 7,
+        "rule": "search-v1",
+        "request": {
+          "actorId": "legacy-player",
+          "locationId": "prototype-location",
+          "expectedWorldRevision": 6
+        },
+        "discoveredItemId": null
+      },
+      "visibility": "private"
+    }
+  ],
+  "rngState": {
+    "algorithm": "xorshift32-v1",
+    "state": 1547420963
+  }
+}

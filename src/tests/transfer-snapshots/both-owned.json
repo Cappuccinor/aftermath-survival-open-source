@@ -1,0 +1,658 @@
+{
+  "stateSchema": "g0-world-v1",
+  "campaign": {
+    "saveId": "prototype-world",
+    "schemaVersion": null,
+    "difficulty": "test_fixture",
+    "seed": 2976,
+    "createdAt": "2026-10-23T00:00:00.000Z",
+    "gameClockMinutes": 5,
+    "worldRevision": 5,
+    "offlineProgressionEnabled": false
+  },
+  "player": {
+    "playerId": "prototype-player",
+    "background": "",
+    "locationId": "prototype-location",
+    "stats": {
+      "hp": 100,
+      "stamina": 100,
+      "mental": 100,
+      "hunger": 0,
+      "thirst": 0,
+      "fatigue": 0,
+      "infection": 0,
+      "pain": 0,
+      "bodyTempC": 37,
+      "carryWeightKg": 0.55
+    },
+    "skills": {},
+    "knownFactIds": [
+      "known-prototype-route",
+      "known-door-prototype-door-gap",
+      "known-building-scene",
+      "cabinet-known",
+      "search-prototype-location-result",
+      "seen-item-prototype-tin",
+      "cabinet-discovery-prototype-bottled-water",
+      "transfer-prototype-bottled-water",
+      "transfer-prototype-tin",
+      "cabinet-search-prototype-cabinet"
+    ]
+  },
+  "locations": {
+    "prototype-location": {
+      "locationId": "prototype-location",
+      "name": "G0 测试地点",
+      "adjacentLocationIds": [
+        "prototype-corridor"
+      ],
+      "light": 1,
+      "searched": true
+    },
+    "prototype-corridor": {
+      "locationId": "prototype-corridor",
+      "name": "走廊",
+      "adjacentLocationIds": [
+        "prototype-location"
+      ],
+      "light": 0.2,
+      "searched": false
+    }
+  },
+  "items": {
+    "prototype-tin": {
+      "itemId": "prototype-tin",
+      "typeId": "empty-tin",
+      "position": {
+        "kind": "player",
+        "id": "prototype-player"
+      },
+      "count": 1,
+      "weightKg": 0.05,
+      "durability": 100,
+      "condition": "",
+      "metadata": {}
+    },
+    "prototype-cabinet": {
+      "itemId": "prototype-cabinet",
+      "typeId": "wooden-cabinet",
+      "position": {
+        "kind": "location",
+        "id": "prototype-location"
+      },
+      "count": 1,
+      "weightKg": 20,
+      "durability": 100,
+      "condition": "intact",
+      "metadata": {}
+    },
+    "prototype-bottled-water": {
+      "itemId": "prototype-bottled-water",
+      "typeId": "bottled-water",
+      "position": {
+        "kind": "player",
+        "id": "prototype-player"
+      },
+      "count": 1,
+      "weightKg": 0.5,
+      "durability": 100,
+      "condition": "sealed",
+      "metadata": {}
+    }
+  },
+  "knowledge": [
+    {
+      "knowerId": "prototype-player",
+      "factId": "known-prototype-route",
+      "source": "evt-initial-route",
+      "confidence": 1,
+      "observedAt": 0
+    },
+    {
+      "knowerId": "prototype-player",
+      "factId": "known-door-prototype-door-gap",
+      "source": "evt-initial-door-gap",
+      "confidence": 1,
+      "observedAt": 0
+    },
+    {
+      "knowerId": "prototype-player",
+      "factId": "known-building-scene",
+      "source": "evt-initial-building-scene",
+      "confidence": 1,
+      "observedAt": 0
+    },
+    {
+      "knowerId": "prototype-player",
+      "factId": "cabinet-known",
+      "source": "evt-initial-cabinet",
+      "confidence": 1,
+      "observedAt": 0
+    },
+    {
+      "knowerId": "prototype-player",
+      "factId": "search-prototype-location-result",
+      "source": "evt-mixed-0-search",
+      "confidence": 1,
+      "observedAt": 1
+    },
+    {
+      "knowerId": "prototype-player",
+      "factId": "seen-item-prototype-tin",
+      "source": "evt-mixed-0-discovery",
+      "confidence": 1,
+      "observedAt": 1
+    },
+    {
+      "knowerId": "prototype-player",
+      "factId": "cabinet-discovery-prototype-bottled-water",
+      "source": "evt-mixed-1-cabinet-discovery",
+      "confidence": 1,
+      "observedAt": 2
+    },
+    {
+      "knowerId": "prototype-player",
+      "factId": "transfer-prototype-bottled-water",
+      "source": "evt-mixed-2-transfer",
+      "confidence": 1,
+      "observedAt": 3
+    },
+    {
+      "knowerId": "prototype-player",
+      "factId": "transfer-prototype-tin",
+      "source": "evt-mixed-3-transfer",
+      "confidence": 1,
+      "observedAt": 4
+    },
+    {
+      "knowerId": "prototype-player",
+      "factId": "cabinet-search-prototype-cabinet",
+      "source": "evt-mixed-4-cabinet-search",
+      "confidence": 1,
+      "observedAt": 5
+    }
+  ],
+  "npcs": [
+    {
+      "kind": "g1-door-witness-v1",
+      "npcId": "prototype-witness",
+      "locationId": "prototype-corridor",
+      "appearance": "worn-shoes-v1",
+      "alertness": 30,
+      "firstNoticed": null
+    }
+  ],
+  "relationships": [],
+  "factions": [],
+  "bases": [],
+  "vehicles": [],
+  "jobs": [],
+  "eventJournal": [
+    {
+      "eventId": "evt-initial-route",
+      "seq": 1,
+      "worldTimeMinutes": 0,
+      "type": "KnownRouteInitialized",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-location",
+        "prototype-corridor"
+      ],
+      "payload": {
+        "rule": "known-route-v1",
+        "roomId": "prototype-location",
+        "corridorId": "prototype-corridor"
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-initial-search",
+      "seq": 2,
+      "worldTimeMinutes": 0,
+      "type": "SearchScopeInitialized",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-location"
+      ],
+      "payload": {
+        "rule": "search-scope-v1",
+        "locationId": "prototype-location",
+        "itemId": "prototype-tin"
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-initial-door-gap",
+      "seq": 3,
+      "worldTimeMinutes": 0,
+      "type": "DoorGapInitialized",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-door-gap",
+        "prototype-location",
+        "prototype-corridor",
+        "prototype-witness"
+      ],
+      "payload": {
+        "rule": "door-gap-scope-v1",
+        "doorId": "prototype-door-gap",
+        "roomId": "prototype-location",
+        "corridorId": "prototype-corridor",
+        "npcId": "prototype-witness",
+        "gapOpen": true,
+        "initialAlertness": 30,
+        "initialRng": {
+          "algorithm": "xorshift32-v1",
+          "state": 2976
+        },
+        "perception": 0,
+        "stealth": 0,
+        "corridorLight": 0.2
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-initial-pickup",
+      "seq": 4,
+      "worldTimeMinutes": 0,
+      "type": "PickupScopeInitialized",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-tin"
+      ],
+      "payload": {
+        "rule": "pickup-scope-v1",
+        "playerId": "prototype-player",
+        "locationId": "prototype-location",
+        "searchSourceEventId": "evt-initial-search",
+        "initialCarryWeightKg": 0,
+        "initialItem": {
+          "itemId": "prototype-tin",
+          "typeId": "empty-tin",
+          "position": {
+            "kind": "location",
+            "id": "prototype-location"
+          },
+          "count": 1,
+          "weightKg": 0.05,
+          "durability": 100,
+          "condition": "",
+          "metadata": {}
+        }
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-initial-building-scene",
+      "seq": 5,
+      "worldTimeMinutes": 0,
+      "type": "BuildingSceneInitialized",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-location",
+        "prototype-corridor"
+      ],
+      "payload": {
+        "rule": "building-scene-v1",
+        "scene": "abandoned-residential-building-v1",
+        "playerId": "prototype-player",
+        "roomId": "prototype-location",
+        "corridorId": "prototype-corridor",
+        "routeSourceEventId": "evt-initial-route",
+        "pickupSourceEventId": "evt-initial-pickup"
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-initial-cabinet",
+      "seq": 6,
+      "worldTimeMinutes": 0,
+      "type": "CabinetSceneInitialized",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-cabinet"
+      ],
+      "payload": {
+        "rule": "cabinet-scope-v1",
+        "playerId": "prototype-player",
+        "locationId": "prototype-location",
+        "cabinetId": "prototype-cabinet",
+        "waterId": "prototype-bottled-water",
+        "buildingSourceEventId": "evt-initial-building-scene"
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-initial-transfer",
+      "seq": 7,
+      "worldTimeMinutes": 0,
+      "type": "TransferScopeInitialized",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-bottled-water"
+      ],
+      "payload": {
+        "rule": "dual-transfer-scope-v1",
+        "playerId": "prototype-player",
+        "locationId": "prototype-location",
+        "initialCarryWeightKg": 0,
+        "pickupSourceEventId": "evt-initial-pickup",
+        "cabinetSourceEventId": "evt-initial-cabinet",
+        "initialTin": {
+          "itemId": "prototype-tin",
+          "typeId": "empty-tin",
+          "position": {
+            "kind": "location",
+            "id": "prototype-location"
+          },
+          "count": 1,
+          "weightKg": 0.05,
+          "durability": 100,
+          "condition": "",
+          "metadata": {}
+        },
+        "initialWater": {
+          "itemId": "prototype-bottled-water",
+          "typeId": "bottled-water",
+          "position": {
+            "kind": "container",
+            "id": "prototype-cabinet"
+          },
+          "count": 1,
+          "weightKg": 0.5,
+          "durability": 100,
+          "condition": "sealed",
+          "metadata": {}
+        }
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-0-time",
+      "seq": 8,
+      "worldTimeMinutes": 1,
+      "type": "TimeAdvanced",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-location"
+      ],
+      "payload": {
+        "rule": "search-v1",
+        "commandId": "mixed-0",
+        "fromMinutes": 0,
+        "toMinutes": 1,
+        "fromRevision": 0,
+        "toRevision": 1
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-0-search",
+      "seq": 9,
+      "worldTimeMinutes": 1,
+      "type": "SearchRecorded",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-location"
+      ],
+      "payload": {
+        "commandId": "mixed-0",
+        "elapsedMinutes": 1,
+        "committedRevision": 1,
+        "observedAt": 1,
+        "rule": "search-v1",
+        "request": {
+          "actorId": "prototype-player",
+          "locationId": "prototype-location",
+          "expectedWorldRevision": 0
+        },
+        "discoveredItemId": "prototype-tin"
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-0-discovery",
+      "seq": 10,
+      "worldTimeMinutes": 1,
+      "type": "ItemDiscovered",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-tin"
+      ],
+      "payload": {
+        "rule": "search-discovery-v1",
+        "commandId": "mixed-0",
+        "itemId": "prototype-tin",
+        "locationId": "prototype-location",
+        "observedAt": 1
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-1-time",
+      "seq": 11,
+      "worldTimeMinutes": 2,
+      "type": "TimeAdvanced",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-cabinet"
+      ],
+      "payload": {
+        "rule": "cabinet-search-v2",
+        "commandId": "mixed-1",
+        "fromMinutes": 1,
+        "toMinutes": 2,
+        "fromRevision": 1,
+        "toRevision": 2
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-1-cabinet-search",
+      "seq": 12,
+      "worldTimeMinutes": 2,
+      "type": "CabinetSearchRecorded",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-cabinet"
+      ],
+      "payload": {
+        "rule": "cabinet-search-v2",
+        "commandId": "mixed-1",
+        "request": {
+          "actorId": "prototype-player",
+          "locationId": "prototype-location",
+          "cabinetId": "prototype-cabinet",
+          "expectedWorldRevision": 1
+        },
+        "elapsedMinutes": 1,
+        "observedAt": 2,
+        "committedRevision": 2,
+        "discoveredItemId": "prototype-bottled-water",
+        "waterLocation": "cabinet"
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-1-cabinet-discovery",
+      "seq": 13,
+      "worldTimeMinutes": 2,
+      "type": "CabinetContentDiscovered",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-bottled-water"
+      ],
+      "payload": {
+        "rule": "cabinet-discovery-v1",
+        "commandId": "mixed-1",
+        "itemId": "prototype-bottled-water",
+        "cabinetId": "prototype-cabinet",
+        "locationId": "prototype-location",
+        "observedAt": 2
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-2-time",
+      "seq": 14,
+      "worldTimeMinutes": 3,
+      "type": "TimeAdvanced",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-bottled-water"
+      ],
+      "payload": {
+        "rule": "pick_up-v2",
+        "commandId": "mixed-2",
+        "fromMinutes": 2,
+        "toMinutes": 3,
+        "fromRevision": 2,
+        "toRevision": 3
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-2-transfer",
+      "seq": 15,
+      "worldTimeMinutes": 3,
+      "type": "ItemTransferred",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-bottled-water"
+      ],
+      "payload": {
+        "rule": "pick_up-v2",
+        "commandId": "mixed-2",
+        "request": {
+          "actorId": "prototype-player",
+          "locationId": "prototype-location",
+          "itemId": "prototype-bottled-water",
+          "expectedWorldRevision": 2
+        },
+        "elapsedMinutes": 1,
+        "observedAt": 3,
+        "committedRevision": 3,
+        "from": {
+          "kind": "container",
+          "id": "prototype-cabinet"
+        },
+        "to": {
+          "kind": "player",
+          "id": "prototype-player"
+        },
+        "count": 1,
+        "weightKg": 0.5,
+        "beforeCarryWeightKg": 0,
+        "afterCarryWeightKg": 0.5,
+        "perceptionSourceEventId": "evt-mixed-1-cabinet-discovery"
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-3-time",
+      "seq": 16,
+      "worldTimeMinutes": 4,
+      "type": "TimeAdvanced",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-tin"
+      ],
+      "payload": {
+        "rule": "pick_up-v2",
+        "commandId": "mixed-3",
+        "fromMinutes": 3,
+        "toMinutes": 4,
+        "fromRevision": 3,
+        "toRevision": 4
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-3-transfer",
+      "seq": 17,
+      "worldTimeMinutes": 4,
+      "type": "ItemTransferred",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-tin"
+      ],
+      "payload": {
+        "rule": "pick_up-v2",
+        "commandId": "mixed-3",
+        "request": {
+          "actorId": "prototype-player",
+          "locationId": "prototype-location",
+          "itemId": "prototype-tin",
+          "expectedWorldRevision": 3
+        },
+        "elapsedMinutes": 1,
+        "observedAt": 4,
+        "committedRevision": 4,
+        "from": {
+          "kind": "location",
+          "id": "prototype-location"
+        },
+        "to": {
+          "kind": "player",
+          "id": "prototype-player"
+        },
+        "count": 1,
+        "weightKg": 0.05,
+        "beforeCarryWeightKg": 0.5,
+        "afterCarryWeightKg": 0.55,
+        "perceptionSourceEventId": "evt-mixed-0-discovery"
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-4-time",
+      "seq": 18,
+      "worldTimeMinutes": 5,
+      "type": "TimeAdvanced",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-cabinet"
+      ],
+      "payload": {
+        "rule": "cabinet-search-v2",
+        "commandId": "mixed-4",
+        "fromMinutes": 4,
+        "toMinutes": 5,
+        "fromRevision": 4,
+        "toRevision": 5
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-mixed-4-cabinet-search",
+      "seq": 19,
+      "worldTimeMinutes": 5,
+      "type": "CabinetSearchRecorded",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-cabinet"
+      ],
+      "payload": {
+        "rule": "cabinet-search-v2",
+        "commandId": "mixed-4",
+        "request": {
+          "actorId": "prototype-player",
+          "locationId": "prototype-location",
+          "cabinetId": "prototype-cabinet",
+          "expectedWorldRevision": 4
+        },
+        "elapsedMinutes": 1,
+        "observedAt": 5,
+        "committedRevision": 5,
+        "discoveredItemId": null,
+        "waterLocation": "player"
+      },
+      "visibility": "private"
+    }
+  ],
+  "rngState": {
+    "algorithm": "xorshift32-v1",
+    "state": 2976
+  }
+}

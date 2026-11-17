@@ -1,0 +1,108 @@
+{
+  "stateSchema": "g0-world-v1",
+  "campaign": {
+    "saveId": "save-1",
+    "schemaVersion": null,
+    "difficulty": "test_fixture",
+    "seed": 1,
+    "createdAt": "2026-10-23T00:00:00.000Z",
+    "gameClockMinutes": 1,
+    "worldRevision": 1,
+    "offlineProgressionEnabled": false
+  },
+  "player": {
+    "playerId": "player-1",
+    "background": "",
+    "locationId": "location-1",
+    "stats": {
+      "hp": 100,
+      "stamina": 100,
+      "mental": 100,
+      "hunger": 0,
+      "thirst": 0,
+      "fatigue": 0,
+      "infection": 0,
+      "pain": 0,
+      "bodyTempC": 37,
+      "carryWeightKg": 0
+    },
+    "skills": {},
+    "knownFactIds": [
+      "sight-location-1-light"
+    ]
+  },
+  "locations": {
+    "location-1": {
+      "locationId": "location-1",
+      "name": "G0 测试地点",
+      "adjacentLocationIds": [],
+      "light": 1,
+      "searched": false
+    }
+  },
+  "items": {},
+  "knowledge": [
+    {
+      "knowerId": "player-1",
+      "factId": "sight-location-1-light",
+      "source": "evt-cmd-1-observation",
+      "confidence": 1,
+      "observedAt": 1
+    }
+  ],
+  "npcs": [],
+  "relationships": [],
+  "factions": [],
+  "bases": [],
+  "vehicles": [],
+  "jobs": [],
+  "eventJournal": [
+    {
+      "eventId": "evt-cmd-1-time",
+      "seq": 1,
+      "worldTimeMinutes": 1,
+      "type": "TimeAdvanced",
+      "actorId": "player-1",
+      "targetIds": [
+        "location-1"
+      ],
+      "payload": {
+        "rule": "observe-v1",
+        "commandId": "cmd-1",
+        "fromMinutes": 0,
+        "toMinutes": 1,
+        "fromRevision": 0,
+        "toRevision": 1
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-cmd-1-observation",
+      "seq": 2,
+      "worldTimeMinutes": 1,
+      "type": "ObservationRecorded",
+      "actorId": "player-1",
+      "targetIds": [
+        "location-1"
+      ],
+      "payload": {
+        "rule": "observe-v1",
+        "commandId": "cmd-1",
+        "request": {
+          "actorId": "player-1",
+          "locationId": "location-1",
+          "expectedWorldRevision": 0
+        },
+        "visibility": "clear",
+        "elapsedMinutes": 1,
+        "committedRevision": 1,
+        "observedAt": 1
+      },
+      "visibility": "private"
+    }
+  ],
+  "rngState": {
+    "algorithm": "xorshift32-v1",
+    "state": 1
+  }
+}

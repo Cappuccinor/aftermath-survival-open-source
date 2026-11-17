@@ -1,0 +1,235 @@
+{
+  "stateSchema": "g0-world-v1",
+  "campaign": {
+    "saveId": "prototype-world",
+    "schemaVersion": null,
+    "difficulty": "test_fixture",
+    "seed": 1,
+    "createdAt": "2026-10-23T00:00:00.000Z",
+    "gameClockMinutes": 2,
+    "worldRevision": 2,
+    "offlineProgressionEnabled": false
+  },
+  "player": {
+    "playerId": "prototype-player",
+    "background": "",
+    "locationId": "prototype-location",
+    "stats": {
+      "hp": 100,
+      "stamina": 100,
+      "mental": 100,
+      "hunger": 0,
+      "thirst": 0,
+      "fatigue": 0,
+      "infection": 0,
+      "pain": 0,
+      "bodyTempC": 37,
+      "carryWeightKg": 0
+    },
+    "skills": {},
+    "knownFactIds": [
+      "seen-item-prototype-tin",
+      "known-prototype-route",
+      "sight-prototype-location-light",
+      "inspection-prototype-tin-appearance"
+    ]
+  },
+  "locations": {
+    "prototype-location": {
+      "locationId": "prototype-location",
+      "name": "G0 测试地点",
+      "adjacentLocationIds": [
+        "prototype-corridor"
+      ],
+      "light": 1,
+      "searched": false
+    },
+    "prototype-corridor": {
+      "locationId": "prototype-corridor",
+      "name": "SECRET",
+      "adjacentLocationIds": [
+        "prototype-location"
+      ],
+      "light": 0.2,
+      "searched": false
+    }
+  },
+  "items": {
+    "prototype-tin": {
+      "itemId": "prototype-tin",
+      "typeId": "empty-tin",
+      "position": {
+        "kind": "location",
+        "id": "prototype-location"
+      },
+      "count": 1,
+      "weightKg": 0.05,
+      "durability": 100,
+      "condition": "",
+      "metadata": {}
+    }
+  },
+  "knowledge": [
+    {
+      "knowerId": "prototype-player",
+      "factId": "seen-item-prototype-tin",
+      "source": "evt-init-prototype-tin-sighting",
+      "confidence": 1,
+      "observedAt": 0
+    },
+    {
+      "knowerId": "prototype-player",
+      "factId": "known-prototype-route",
+      "source": "evt-initial-route",
+      "confidence": 1,
+      "observedAt": 0
+    },
+    {
+      "knowerId": "prototype-player",
+      "factId": "sight-prototype-location-light",
+      "source": "evt-legacy-observe-observation",
+      "confidence": 1,
+      "observedAt": 1
+    },
+    {
+      "knowerId": "prototype-player",
+      "factId": "inspection-prototype-tin-appearance",
+      "source": "evt-legacy-inspect-inspection",
+      "confidence": 1,
+      "observedAt": 2
+    }
+  ],
+  "npcs": [],
+  "relationships": [],
+  "factions": [],
+  "bases": [],
+  "vehicles": [],
+  "jobs": [],
+  "eventJournal": [
+    {
+      "eventId": "evt-init-prototype-tin-sighting",
+      "seq": 1,
+      "worldTimeMinutes": 0,
+      "type": "ItemInitiallyPerceived",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-tin"
+      ],
+      "payload": {
+        "rule": "initial-sight-v1",
+        "itemId": "prototype-tin",
+        "locationId": "prototype-location",
+        "observedAt": 0
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-initial-route",
+      "seq": 2,
+      "worldTimeMinutes": 0,
+      "type": "KnownRouteInitialized",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-location",
+        "prototype-corridor"
+      ],
+      "payload": {
+        "rule": "known-route-v1",
+        "roomId": "prototype-location",
+        "corridorId": "prototype-corridor"
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-legacy-observe-time",
+      "seq": 3,
+      "worldTimeMinutes": 1,
+      "type": "TimeAdvanced",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-location"
+      ],
+      "payload": {
+        "rule": "observe-v1",
+        "commandId": "legacy-observe",
+        "fromMinutes": 0,
+        "toMinutes": 1,
+        "fromRevision": 0,
+        "toRevision": 1
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-legacy-observe-observation",
+      "seq": 4,
+      "worldTimeMinutes": 1,
+      "type": "ObservationRecorded",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-location"
+      ],
+      "payload": {
+        "commandId": "legacy-observe",
+        "elapsedMinutes": 1,
+        "committedRevision": 1,
+        "observedAt": 1,
+        "rule": "observe-v1",
+        "request": {
+          "actorId": "prototype-player",
+          "locationId": "prototype-location",
+          "expectedWorldRevision": 0
+        },
+        "visibility": "clear"
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-legacy-inspect-time",
+      "seq": 5,
+      "worldTimeMinutes": 2,
+      "type": "TimeAdvanced",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-tin"
+      ],
+      "payload": {
+        "rule": "inspect-v1",
+        "commandId": "legacy-inspect",
+        "fromMinutes": 1,
+        "toMinutes": 2,
+        "fromRevision": 1,
+        "toRevision": 2
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-legacy-inspect-inspection",
+      "seq": 6,
+      "worldTimeMinutes": 2,
+      "type": "InspectionRecorded",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-tin"
+      ],
+      "payload": {
+        "commandId": "legacy-inspect",
+        "elapsedMinutes": 1,
+        "committedRevision": 2,
+        "observedAt": 2,
+        "rule": "inspect-v1",
+        "request": {
+          "actorId": "prototype-player",
+          "locationId": "prototype-location",
+          "expectedWorldRevision": 1,
+          "itemId": "prototype-tin"
+        },
+        "appearance": "open-metal-tin-v1"
+      },
+      "visibility": "private"
+    }
+  ],
+  "rngState": {
+    "algorithm": "xorshift32-v1",
+    "state": 1
+  }
+}

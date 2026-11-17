@@ -1,0 +1,17 @@
+const fs=require('node:fs'),path=require('node:path'),http=require('node:http'),cp=require('node:child_process'),crypto=require('node:crypto');
+const {chromium}=require(process.env.PLAYWRIGHT_MODULE_PATH||'playwright');
+const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
+(async()=>{
+ const dir=path.resolve(process.argv[2]);if(fs.existsSync(dir))throw Error('Use a fresh directory');fs.mkdirSync(dir,{recursive:true});
+ const files=fs.readdirSync('src',{recursive:true}).filter(f=>String(f).endsWith('.ts')).map(f=>'src/'+f.replaceAll('\\','/')),blobs=cp.execFileSync('git',['hash-object','--',...files],{encoding:'utf8'}).trim().split(/\r?\n/);
+ const result={status:'running',kind:'Actual native IndexedDB; labelled transaction and data faults, not physical power loss',sourceFiles:files.map((file,i)=>({file,gitBlob:blobs[i]})),checks:[],pageErrors:[]};
+ const {build}=await import('vite');await build({configFile:false,build:{outDir:path.join(dir,'bundle'),emptyOutDir:false,lib:{entry:'src/tests/browser/mixed-recovery-storage-harness.ts',formats:['es'],fileName:()=> 'harness.js'}}});result.artifact={file:'bundle/harness.js',sha256:hash(fs.readFileSync(path.join(dir,'bundle/harness.js')))};
+ const server=http.createServer((req,res)=>{res.setHeader('Content-Type',req.url==='/harness.js'?'text/javascript':'text/html');res.end(req.url==='/harness.js'?fs.readFileSync(path.join(dir,'bundle/harness.js')):'<!doctype html><title>Mixed recovery native proof</title>');});await new Promise(r=>server.listen(0,'127.0.0.1',r));let context,timer;
+ try{
+  context=await chromium.launchPersistentContext(path.join(dir,'profile'),{channel:'chrome',headless:true});result.browser=context.browser()?.version();const page=context.pages()[0];page.on('pageerror',e=>result.pageErrors.push(e.message));await page.goto('http://127.0.0.1:'+server.address().port);
+  const text=fs.readFileSync('src/tests/save-fixtures/v1.json','utf8');result.checks=await Promise.race([page.evaluate(async text=>(await import('/harness.js')).runMixedChecks(text),text),new Promise((_,reject)=>{timer=setTimeout(()=>reject(Error('native suite exceeded 120 seconds')),120000);})]);clearTimeout(timer);
+  const peer=await context.newPage();await peer.goto(page.url());for(const same of [true,false]){const name='mixed-pages-'+same;await page.evaluate(async d=>(await import('/harness.js')).seedMixedRace(d.name,d.text),{name,text});await Promise.all([page,peer].map((p,i)=>p.evaluate(async d=>(await import('/harness.js')).prepareMixedRace(d.name,d.slot),{name,slot:same||!i?'manual-1':'manual-2'})));const r=await Promise.all([page,peer].map(p=>p.evaluate(async()=>(await import('/harness.js')).commitMixedRace())));if(r.filter(x=>x.ok).length!==(same?1:2))throw Error('race result');result.checks.push(same?'two real pages same slot: one winner':'two real pages independent slots: both committed');}
+  if(result.pageErrors.length)throw Error('uncaught page errors: '+result.pageErrors.join(';'));result.status='passed';
+ }catch(e){result.status='failed';result.error=String(e.stack);process.exitCode=1;}
+ finally{clearTimeout(timer);await context?.close();await new Promise(r=>server.close(r));result.servicesClosed=true;fs.writeFileSync(path.join(dir,'result.json'),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify({status:result.status,error:result.error,checks:result.checks,pageErrors:result.pageErrors,servicesClosed:true}));}
+})().catch(e=>{console.error(e);process.exitCode=1;});

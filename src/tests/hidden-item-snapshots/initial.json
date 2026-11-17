@@ -1,0 +1,373 @@
+{
+  "stateSchema": "g0-world-v1",
+  "campaign": {
+    "saveId": "prototype-world",
+    "schemaVersion": null,
+    "difficulty": "test_fixture",
+    "seed": 1,
+    "createdAt": "2026-10-23T00:00:00.000Z",
+    "gameClockMinutes": 0,
+    "worldRevision": 0,
+    "offlineProgressionEnabled": false
+  },
+  "player": {
+    "playerId": "prototype-player",
+    "background": "",
+    "locationId": "prototype-location",
+    "stats": {
+      "hp": 100,
+      "stamina": 100,
+      "mental": 100,
+      "hunger": 0,
+      "thirst": 0,
+      "fatigue": 0,
+      "infection": 0,
+      "pain": 0,
+      "bodyTempC": 37,
+      "carryWeightKg": 0
+    },
+    "skills": {},
+    "knownFactIds": [
+      "known-prototype-route",
+      "known-door-prototype-door-gap",
+      "known-building-scene",
+      "cabinet-known"
+    ]
+  },
+  "locations": {
+    "prototype-location": {
+      "locationId": "prototype-location",
+      "name": "G0 测试地点",
+      "adjacentLocationIds": [
+        "prototype-corridor"
+      ],
+      "light": 1,
+      "searched": false
+    },
+    "prototype-corridor": {
+      "locationId": "prototype-corridor",
+      "name": "走廊",
+      "adjacentLocationIds": [
+        "prototype-location"
+      ],
+      "light": 0.2,
+      "searched": false
+    }
+  },
+  "items": {
+    "prototype-tin": {
+      "itemId": "prototype-tin",
+      "typeId": "empty-tin",
+      "position": {
+        "kind": "location",
+        "id": "prototype-location"
+      },
+      "count": 1,
+      "weightKg": 0.05,
+      "durability": 100,
+      "condition": "",
+      "metadata": {}
+    },
+    "prototype-cabinet": {
+      "itemId": "prototype-cabinet",
+      "typeId": "wooden-cabinet",
+      "position": {
+        "kind": "location",
+        "id": "prototype-location"
+      },
+      "count": 1,
+      "weightKg": 20,
+      "durability": 100,
+      "condition": "intact",
+      "metadata": {}
+    },
+    "prototype-bottled-water": {
+      "itemId": "prototype-bottled-water",
+      "typeId": "bottled-water",
+      "position": {
+        "kind": "container",
+        "id": "prototype-cabinet"
+      },
+      "count": 1,
+      "weightKg": 0.5,
+      "durability": 100,
+      "condition": "sealed",
+      "metadata": {}
+    },
+    "prototype-hidden-handgun": {
+      "itemId": "prototype-hidden-handgun",
+      "typeId": "hidden-handgun-fixture-v1",
+      "position": {
+        "kind": "npc",
+        "id": "prototype-witness"
+      },
+      "count": 1,
+      "weightKg": 1,
+      "durability": 100,
+      "condition": "concealed",
+      "metadata": {}
+    }
+  },
+  "knowledge": [
+    {
+      "knowerId": "prototype-player",
+      "factId": "known-prototype-route",
+      "source": "evt-initial-route",
+      "confidence": 1,
+      "observedAt": 0
+    },
+    {
+      "knowerId": "prototype-player",
+      "factId": "known-door-prototype-door-gap",
+      "source": "evt-initial-door-gap",
+      "confidence": 1,
+      "observedAt": 0
+    },
+    {
+      "knowerId": "prototype-player",
+      "factId": "known-building-scene",
+      "source": "evt-initial-building-scene",
+      "confidence": 1,
+      "observedAt": 0
+    },
+    {
+      "knowerId": "prototype-player",
+      "factId": "cabinet-known",
+      "source": "evt-initial-cabinet",
+      "confidence": 1,
+      "observedAt": 0
+    }
+  ],
+  "npcs": [
+    {
+      "kind": "g1-door-witness-v1",
+      "npcId": "prototype-witness",
+      "locationId": "prototype-corridor",
+      "appearance": "worn-shoes-v1",
+      "alertness": 30,
+      "firstNoticed": null
+    }
+  ],
+  "relationships": [],
+  "factions": [],
+  "bases": [],
+  "vehicles": [],
+  "jobs": [],
+  "eventJournal": [
+    {
+      "eventId": "evt-initial-route",
+      "seq": 1,
+      "worldTimeMinutes": 0,
+      "type": "KnownRouteInitialized",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-location",
+        "prototype-corridor"
+      ],
+      "payload": {
+        "rule": "known-route-v1",
+        "roomId": "prototype-location",
+        "corridorId": "prototype-corridor"
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-initial-search",
+      "seq": 2,
+      "worldTimeMinutes": 0,
+      "type": "SearchScopeInitialized",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-location"
+      ],
+      "payload": {
+        "rule": "search-scope-v1",
+        "locationId": "prototype-location",
+        "itemId": "prototype-tin"
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-initial-door-gap",
+      "seq": 3,
+      "worldTimeMinutes": 0,
+      "type": "DoorGapInitialized",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-door-gap",
+        "prototype-location",
+        "prototype-corridor",
+        "prototype-witness"
+      ],
+      "payload": {
+        "rule": "door-gap-scope-v1",
+        "doorId": "prototype-door-gap",
+        "roomId": "prototype-location",
+        "corridorId": "prototype-corridor",
+        "npcId": "prototype-witness",
+        "gapOpen": true,
+        "initialAlertness": 30,
+        "initialRng": {
+          "algorithm": "xorshift32-v1",
+          "state": 1
+        },
+        "perception": 0,
+        "stealth": 0,
+        "corridorLight": 0.2
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-initial-pickup",
+      "seq": 4,
+      "worldTimeMinutes": 0,
+      "type": "PickupScopeInitialized",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-tin"
+      ],
+      "payload": {
+        "rule": "pickup-scope-v1",
+        "playerId": "prototype-player",
+        "locationId": "prototype-location",
+        "searchSourceEventId": "evt-initial-search",
+        "initialCarryWeightKg": 0,
+        "initialItem": {
+          "itemId": "prototype-tin",
+          "typeId": "empty-tin",
+          "position": {
+            "kind": "location",
+            "id": "prototype-location"
+          },
+          "count": 1,
+          "weightKg": 0.05,
+          "durability": 100,
+          "condition": "",
+          "metadata": {}
+        }
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-initial-building-scene",
+      "seq": 5,
+      "worldTimeMinutes": 0,
+      "type": "BuildingSceneInitialized",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-location",
+        "prototype-corridor"
+      ],
+      "payload": {
+        "rule": "building-scene-v1",
+        "scene": "abandoned-residential-building-v1",
+        "playerId": "prototype-player",
+        "roomId": "prototype-location",
+        "corridorId": "prototype-corridor",
+        "routeSourceEventId": "evt-initial-route",
+        "pickupSourceEventId": "evt-initial-pickup"
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-initial-cabinet",
+      "seq": 6,
+      "worldTimeMinutes": 0,
+      "type": "CabinetSceneInitialized",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-cabinet"
+      ],
+      "payload": {
+        "rule": "cabinet-scope-v1",
+        "playerId": "prototype-player",
+        "locationId": "prototype-location",
+        "cabinetId": "prototype-cabinet",
+        "waterId": "prototype-bottled-water",
+        "buildingSourceEventId": "evt-initial-building-scene"
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-initial-transfer",
+      "seq": 7,
+      "worldTimeMinutes": 0,
+      "type": "TransferScopeInitialized",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-bottled-water"
+      ],
+      "payload": {
+        "rule": "dual-transfer-scope-v1",
+        "playerId": "prototype-player",
+        "locationId": "prototype-location",
+        "initialCarryWeightKg": 0,
+        "pickupSourceEventId": "evt-initial-pickup",
+        "cabinetSourceEventId": "evt-initial-cabinet",
+        "initialTin": {
+          "itemId": "prototype-tin",
+          "typeId": "empty-tin",
+          "position": {
+            "kind": "location",
+            "id": "prototype-location"
+          },
+          "count": 1,
+          "weightKg": 0.05,
+          "durability": 100,
+          "condition": "",
+          "metadata": {}
+        },
+        "initialWater": {
+          "itemId": "prototype-bottled-water",
+          "typeId": "bottled-water",
+          "position": {
+            "kind": "container",
+            "id": "prototype-cabinet"
+          },
+          "count": 1,
+          "weightKg": 0.5,
+          "durability": 100,
+          "condition": "sealed",
+          "metadata": {}
+        }
+      },
+      "visibility": "private"
+    },
+    {
+      "eventId": "evt-initial-npc-hidden-item",
+      "seq": 8,
+      "worldTimeMinutes": 0,
+      "type": "NpcHiddenItemInitialized",
+      "actorId": "prototype-player",
+      "targetIds": [
+        "prototype-witness",
+        "prototype-hidden-handgun"
+      ],
+      "payload": {
+        "rule": "npc-hidden-item-scope-v1",
+        "playerId": "prototype-player",
+        "npcId": "prototype-witness",
+        "doorSourceEventId": "evt-initial-door-gap",
+        "transferSourceEventId": "evt-initial-transfer",
+        "initialItem": {
+          "itemId": "prototype-hidden-handgun",
+          "typeId": "hidden-handgun-fixture-v1",
+          "position": {
+            "kind": "npc",
+            "id": "prototype-witness"
+          },
+          "count": 1,
+          "weightKg": 1,
+          "durability": 100,
+          "condition": "concealed",
+          "metadata": {}
+        }
+      },
+      "visibility": "private"
+    }
+  ],
+  "rngState": {
+    "algorithm": "xorshift32-v1",
+    "state": 1
+  }
+}
